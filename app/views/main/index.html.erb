@@ -1,1 +1,29 @@
+<div class="content_index">
+    <% Gauchada.all.each do |gau| %>
+        <div class="col-md-4">
 
+            <div>
+             Nombre:<%= gau.nombre %>
+             <br>
+             <%= image_tag "descarga.jpg" %>
+
+             <br><br>
+             <br>
+             descripcion :<%= gau.descripcion %>
+             <br>
+             IdUsuariogauchada: <%= gau.Id_Usuario %>
+           </div>
+        </div>
+    <% end %>
+
+  </div>
+
+
+    </div>
+</div>
+
+
+<!-- se deberia usar esto cuando tengamos una tabla de gauchadas
+
+
+  end -->
