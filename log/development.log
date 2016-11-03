@@ -5535,3 +5535,106 @@ Processing by LogrosController#show as HTML
   Rendered logros/show.html.erb within layouts/application (21.7ms)
   Rendered layouts/_encabezado.html.erb (0.7ms)
 Completed 200 OK in 79ms (Views: 76.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 18:25:26 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_encabezado.html.erb (8.5ms)
+Completed 200 OK in 1412ms (Views: 1374.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 18:25:27 -0300
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_encabezado.html.erb (1.2ms)
+Completed 200 OK in 58ms (Views: 57.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-11-03 18:25:30 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (60.2ms)
+  Rendered layouts/_encabezado.html.erb (1.2ms)
+Completed 200 OK in 146ms (Views: 109.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-11-03 18:25:32 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_encabezado.html.erb (0.7ms)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listadoLogros" for ::1 at 2016-11-03 18:25:33 -0300
+Processing by LogrosController#show as HTML
+  [1m[35mLogro Load (0.3ms)[0m  SELECT "logros".* FROM "logros"
+  Rendered logros/show.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_encabezado.html.erb (1.0ms)
+Completed 200 OK in 47ms (Views: 45.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-11-03 18:25:37 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_encabezado.html.erb (0.8ms)
+Completed 200 OK in 60ms (Views: 57.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listadoLogros" for ::1 at 2016-11-03 18:25:38 -0300
+Processing by LogrosController#show as HTML
+  [1m[36mLogro Load (0.4ms)[0m  [1mSELECT "logros".* FROM "logros"[0m
+  Rendered logros/show.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_encabezado.html.erb (0.8ms)
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-11-03 18:25:40 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_encabezado.html.erb (0.6ms)
+Completed 200 OK in 59ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-11-03 18:25:40 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_encabezado.html.erb (0.7ms)
+Completed 200 OK in 55ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-11-03 18:25:41 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.7ms)
+  Rendered layouts/_encabezado.html.erb (0.6ms)
+Completed 200 OK in 56ms (Views: 54.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listadoLogros" for ::1 at 2016-11-03 18:25:42 -0300
+Processing by LogrosController#show as HTML
+  [1m[35mLogro Load (0.4ms)[0m  SELECT "logros".* FROM "logros"
+  Rendered logros/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_encabezado.html.erb (0.8ms)
+Completed 200 OK in 60ms (Views: 57.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listadoLogros" for ::1 at 2016-11-03 18:25:47 -0300
+Processing by LogrosController#show as HTML
+  [1m[36mLogro Load (0.4ms)[0m  [1mSELECT "logros".* FROM "logros"[0m
+  Rendered logros/show.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_encabezado.html.erb (0.8ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-11-03 18:25:48 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (18.4ms)
+  Rendered layouts/_encabezado.html.erb (0.9ms)
+Completed 200 OK in 67ms (Views: 65.0ms | ActiveRecord: 0.0ms)
