@@ -46,4 +46,6 @@ group :development do
 
   gem 'devise'
 
+	gem 'hirb'
+
 end

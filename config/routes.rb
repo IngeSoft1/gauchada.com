@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'main#index'
   get '/nuevoMonstruo', to:'monstruos#new'
   get '/listadoMonstruos', to:'monstruos#index'
+  get '/listadoLogros', to:'logros#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
