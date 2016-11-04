@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20161101184205) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "monstruos", force: :cascade do |t|
     t.string   "nombre"
     t.string   "edad"
@@ -39,7 +42,7 @@ ActiveRecord::Schema.define(version: 20161101184205) do
     t.string   "localidad"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
