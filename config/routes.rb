@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
+  
+
+  get 'gauchada/index'
+
+  get '/detallesGauchada', to:'gauchada#show'
+
+  get '/listadoLogros', to:'logros#index'
+
+  get '/nuevoLogro', to:'logros#new'
+
+  get '/editarLogro', to:'logros#edit'
 
   devise_for :users
-  root 'main#index'
+  root 'gauchada#index'
   get '/nuevoMonstruo', to:'monstruos#new'
   get '/listadoMonstruos', to:'monstruos#index'
 

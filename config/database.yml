@@ -11,7 +11,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: pg_development
+  database: pg_test
 
 production:
   adapter: postgresql

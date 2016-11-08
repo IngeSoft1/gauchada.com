@@ -1,0 +1,27 @@
+
+<h1>Listado de Logros</h1>
+  <table class= "table table-hover">
+    <thead>
+      <tr>
+        <th> Categoria</th>
+        <th> Puntaje Inicial </th>
+        <th> Puntaje Final </th>
+        <th> Acciones </th>
+      </tr>
+    </thead>
+<tbody>
+  <% Logro.all.each do |logro| %>
+    <tr>
+      <td> <%= logro.nombre %> </td>
+      <td> <%= logro.valor_min %> </td>
+      <td> <%= logro.valor_max %> </td>
+      <td>
+        <p>
+          <button type="button" class="btn btn-primary btn-sm"> Editar </button>
+          <button type="button" class="btn btn-danger btn-sm"> Eliminar </button>
+        </p>
+      </td>
+    </tr>
+<% end %>
+</tbody>
+</table>

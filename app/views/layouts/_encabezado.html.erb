@@ -15,7 +15,8 @@
           Logged in as <strong><%= current_user.name %></strong>.
           <button class="btn btn-sm align-middle btn-outline-secondary" type="button"><%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> </button>
           <% if current_user.name == "Administrador"%>
-              <button class="btn btn-sm align-middle btn-outline-secondary" type="button"><%= link_to 'Editar logros', destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></button>
+              <button class="btn btn-sm align-middle btn-outline-secondary" type="button"><%= link_to 'Listado de logros', listadoLogros_path %></button>
+              <button class="btn btn-sm align-middle btn-outline-secondary" type="button"><%= link_to 'Editar logros', editarLogro_path %></button>
           <% end %>
           <button class="btn btn-sm align-middle btn-outline-secondary" type="button"><%= link_to 'Cerrar sesion', destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></button>
 
