@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get '/editarLogro', to:'logros#edit'
 
+  get '/eliminarLogro', to:'logros#destroy'
+
   devise_for :users
   root 'gauchada#index'
   get '/nuevoMonstruo', to:'monstruos#new'

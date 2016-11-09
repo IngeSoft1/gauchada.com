@@ -1,6 +1,6 @@
 class LogrosController < ApplicationController
   def index
-    
+
   end
 
   def show
@@ -13,9 +13,10 @@ class LogrosController < ApplicationController
   def create
     @logro = Logro.new(logro_params)
     if @logro.save
-      redirect_to root_path
+      flash[:notice] = 'El Logro se creó exitosamente!'
+      redirect_to listadoLogros_path
     else
-      redirect_to root_path
+      redirect_to listadoLogros_path
     end
   end
 
@@ -31,10 +32,16 @@ class LogrosController < ApplicationController
    @logro = Logro.find params[:id]
   if @logro.update_attributes (logro_params)
     flash[:notice] = 'El Logro se actualizo exitosamente!'
-    redirect_to root_path
+    redirect_to listadoLogros_path
   end
 end
 
     def destroy
+      @logro = Logro.find(params[:id])
+     if @logro.present?
+       @logro.destroy
+       flash[:notice] = 'El Logro se elimino exitosamente!'
+     end
+     redirect_to listadoLogros_path
     end
 end
