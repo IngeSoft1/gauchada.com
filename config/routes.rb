@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+
+  resources :logros
 
   get 'gauchada/index'
 

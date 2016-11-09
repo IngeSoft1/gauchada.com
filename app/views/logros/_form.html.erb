@@ -1,0 +1,9 @@
+<%= form_for (@logro) do |f| %>
+<%= f.label :nombre %>
+<%= f.text_field :nombre %>
+<%= f.label :valor_minimo %>
+<%= f.number_field :valor_min %>
+<%= f.label :valor_maximo %>
+<%= f.number_field :valor_max %>
+<%= f.submit 'Guardar' %>
+<% end %>

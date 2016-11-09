@@ -10,14 +10,14 @@
       </tr>
     </thead>
 <tbody>
-  <% Logro.all.each do |logro| %>
+  <% Logro.all.each do |logr| %>
     <tr>
-      <td> <%= logro.nombre %> </td>
-      <td> <%= logro.valor_min %> </td>
-      <td> <%= logro.valor_max %> </td>
+      <td> <%= logr.nombre %> </td>
+      <td> <%= logr.valor_min %> </td>
+      <td> <%= logr.valor_max %> </td>
       <td>
         <p>
-          <button type="button" class="btn btn-primary btn-sm"> Editar </button>
+          <td><%= link_to "Editar", editarLogro_path(@logro, :id => logr.id), class: 'btn btn-info btn-sm' %></d>
           <button type="button" class="btn btn-danger btn-sm"> Eliminar </button>
         </p>
       </td>
