@@ -19,7 +19,7 @@ class LogrosController < ApplicationController
           flash[:notice] = 'Ya exite un logro con ese nombre'
           cumple = false
        end
-       if(@logro.valor_min <= logr.valor_max)
+       if(@logro.valor_min <= logr.valor_max)&&(@logro.valor_max >= logr.valor_min)
          flash[:notice] = 'El puntaje del logro se superpone con otro'
          cumple = false
        end
