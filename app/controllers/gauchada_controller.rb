@@ -1,6 +1,7 @@
 class GauchadaController < ApplicationController
   def index
-  end
+
+end
 
   def show
     @gauchada = Gauchada.find(params[:id])

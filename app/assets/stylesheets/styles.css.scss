@@ -2,9 +2,9 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import "variables";
 body {
-  padding-top: 100px;
-  background : $bg-color;
-  font-family: 'Noto Sans', sans-serif;
+  margin-top: 250;
+  font-family: 'Montserrat', sans-serif;
+  
 }
 
 h1,
@@ -15,26 +15,109 @@ h5,
 h6 {
   font-family: 'Montserrat', sans-serif;
 }
+.mostrar{
+  position: absolute;
+  top: 100px;
+  height: auto;
+  right: 100px;
+  width: 1000px;
+}
+.texta{
+  width: 900px;
+}
+.Comentarios{
 
-.navbar {
-  border          : none;
-  background-color: $navbar-color;
+  position: absolute;
+  top: 720px;
+}
+.Contenido-Principal{
+  width: 1200px;
+  height: 700px;
+  position: absolute;
+  top: 300px;
+}
+.logros{
+  position: absolute;
+  z-index: 3;
+  top: 170px;
+  right: 50%;
+  width: 220px;
+  height: 200px;
 }
 
-.navbar-brand {
-  font-weight: 600;
-  
+
+.alert{
+  position: relative;
+  top: 200px;
 }
 
-.navbar-brand,
-.navbar-default .navbar-nav > li > a {
-  font-family: 'Montserrat';
-  color      : white !important;
 
-  &:hover {
-    color: $bg-color !important;
-  };
+.show-gauchada{
+  position: absolute;
+  top: 200px;
 }
+
+.show-detalle{
+  width: 400px;
+  height: 400px;
+  font-size: 25px;
+  position: absolute;
+  left: 500px;
+  bottom: 40px;
+}
+
+.container-show{
+  top: 400px;
+  width: 1200px;
+  height: 900px;
+}
+
+.formularios{
+  width: 100%;
+  position: absolute;
+  top: 300px;
+  right: 5%;
+  opacity: 0.7;
+}
+
+.mensaje{
+  position: absolute;
+  top: 400px;
+}
+
+.sobrenosotros{
+  width: 100%;
+  position: absolute;
+  top: 200px;
+  opacity: 0.7;
+}
+
+.img-logo{
+  width: 90px;
+  height: 90px;
+}
+
+.img-logo:hover{
+opacity: 0.7;
+}
+
+.table2{
+  position: absolute;
+  top:200px;
+  font-size: 20px;
+  padding-left: 200px;
+  width: 1200px;
+  opacity: 0.9;
+}
+
+.imgbar{
+  left: 0;
+  width: 100%;
+  height: 350px;
+  position:absolute;
+  z-index: 1;
+}
+
 
 .avatar {
   border: 1px solid $border-color;
@@ -187,3 +270,115 @@ p {
 .atwho-view .cur {
   background: $navbar-color;
 }
+/* Add a dark background color with a little bit see-through */
+.navbar {
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
+}
+
+.logeado{
+  color: #d5d5d5 !important;
+  position: absolute;
+  top: 17px;
+}
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand {
+    color: #d5d5d5 !important;
+    text-decoration: none;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+/* Dropdown */
+.open .dropdown-toggle {
+    color: #fff ;
+    background-color: #555 !important;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+    color: #000 !important;
+}
+
+/* On hover, the dropdown links will turn red */
+.dropdown-menu li a:hover {
+    background-color: red !important;
+}
+.btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: .2s;
+}
+
+/* On hover, the color of .btn will transition to white with black text */
+.btn:hover, .btn:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+}
+.vermas{
+  position: absolute;
+  right: 100px;
+}
+
+.container { margin-top: 20px; }
+.mb20 { margin-bottom: 20px; }
+
+hgroup { padding-left: 15px; border-bottom: 1px solid #ccc; }
+hgroup h1 { font: 500 normal 1.625em "Roboto",Arial,Verdana,sans-serif; color: #2a3644; margin-top: 0; line-height: 1.15; }
+hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; color: #2a3644; margin: 0; padding-bottom: 10px; }
+
+.search-result .thumbnail { border-radius: 0 !important; }
+.search-result:first-child { margin-top: 0 !important; }
+.search-result { margin-top: 20px; }
+.search-result .col-md-2 { border-right: 1px dotted #ccc; min-height: 140px; }
+.search-result ul { padding-left: 0 !important; list-style: none;  }
+.search-result ul li { font: 400 normal .85em "Roboto",Arial,Verdana,sans-serif;  line-height: 30px; }
+.search-result ul li i { padding-right: 5px; }
+.search-result .col-md-7 { position: relative; }
+.search-result h3 { font: 500 normal 1.375em "Roboto",Arial,Verdana,sans-serif; margin-top: 0 !important; margin-bottom: 10px !important; }
+.search-result h3 > a, .search-result i { color: #248dc1 !important; }
+.search-result p { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; }
+.search-result span.plus { position: absolute; right: 0; top: 126px; }
+.search-result span.plus a { background-color: #248dc1; padding: 5px 5px 3px 5px; }
+.search-result span.plus a:hover { background-color: #414141; }
+.search-result span.plus a i { color: #fff !important; }
+.search-result span.border { display: block; width: 97%; margin: 0 15px; border-bottom: 1px dotted #ccc; }
+
+.card {
+  margin-top: 50px;
+  background: #eee;
+  padding: 3em;
+  line-height: 1.5em; }
+  .product-title, .price, .sizes, .colors {
+  text-transform: UPPERCASE;
+  font-weight: bold; }
+
+.checked, .price span {
+  color: #ff9f1a; }
+
+.product-title, .rating, .product-description, .price, .vote, .sizes {
+  margin-bottom: 15px; }
+
+.product-title {
+  margin-top: 0; }

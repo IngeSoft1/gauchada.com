@@ -1,28 +1,35 @@
-<h1>Listado de últimas gauchadas agregadas</h1>
-<div class="container-fluid">
+<div class="Contenido-Principal">
 
-  <table class="table table-hover">
+              <hgroup class="mb20">
+            		<h1>Gauchadas</h1>
+            		<h2 class="lead"><strong class="text-danger"><strong>Cantidad de gauchadas para visualizar  </strong><%=Gauchada.all.count%></strong></h2>
+      	      </hgroup>
+              <% Gauchada.all.each do |gau| %>
 
-    <tr class="active">
+                  <section class="col-xs-12 col-sm-6 col-md-12">
+                  		<article class="search-result row">
+                  			<div class="col-xs-12 col-sm-12 col-md-3">
+                  				<a href="#" title="Lorem ipsum" class="thumbnail"><%= image_tag gau.imagen , class:"img-rounded", size:'200x200'%></a>
+                  			</div>
+                  			<div class="col-xs-12 col-sm-12 col-md-2">
+                  				<ul class="meta-search">
+                  					<li><i class="glyphicon glyphicon-user"></i> <span><%=  %></span></li>
+                  					<li><i class="glyphicon glyphicon-time"></i> <span><%= gau.created_at %></span></li>
+                  					<li><i class="glyphicon glyphicon-map-marker"></i> <span><%= gau.ubicacion %></span></li>
+                  				</ul>
+                  			</div>
+                  			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+                  				<h3><a href="#" title=""> <%= gau.titulo %></a></h3>
+                  				<p><%= gau.descripcion %></p>
+                  			</div>
+                        <div class="col-xs-12 col-sm-12 col-md-7 excerpet"><%= link_to "Ver mas", detallesGauchada_path(@gauchada, :id => gau.id), class: 'btn btn-info btn-sm vermas' %></div>
 
-      <th> Nombre </th>
-      <th> Ubicacion </th>
-      <th> Foto </th>
+                  			<span class="clearfix borda"></span>
+                  		</article>
+
+                </section>
+            <% end %>
 
 
-    </tr>
 
-      <% Gauchada.all.each do |gau| %>
-
-    <tr>
-        <td> <%= gau.titulo %> </td>
-        <td> <%= gau.ubicacion %> </td>
-        <td><%= image_tag gau.imagen , size: "150x150"%></td>
-        <td><%= link_to "Ver mas", detallesGauchada_path(@gauchada, :id => gau.id), class: 'btn btn-info btn-sm' %></d>
-    </tr>
-    <% end %>
-
-  </table>
-
-
-</div>
+    </div>

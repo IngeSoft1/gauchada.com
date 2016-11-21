@@ -1,6 +1,6 @@
 
 <h1>Listado de Logros</h1>
-  <table class= "table2 table table-hover">
+  <table class= "table table-hover">
     <thead>
       <tr>
         <th> Categoria</th>
@@ -15,10 +15,13 @@
       <td> <%= logr.nombre %> </td>
       <td> <%= logr.valor_min %> </td>
       <td> <%= logr.valor_max %> </td>
-          <td><%= link_to "Editar", editarLogro_path(@logro, :id => logr.id), class: 'btn btn-info btn-sm' %>
-          <%= link_to "Eliminar", eliminarLogro_path(@logro, :id => logr.id), class: 'btn btn-danger btn-sm' %></td>
-          <td>
-
+      <td>
+        <p>
+          <td><%= link_to "Editar", editarLogro_path(@logro, :id => logr.id), class: 'btn btn-info btn-sm' %></d>
+            <td><%= link_to "Eliminar", eliminarLogro_path(@logro, :id => logr.id), class: 'btn btn-danger btn-sm"' %></d>
+        
+        </p>
+      </td>
     </tr>
 <% end %>
 </tbody>

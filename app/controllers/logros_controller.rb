@@ -11,36 +11,37 @@ class LogrosController < ApplicationController
   end
 
   def create
-    @logro = Logro.new(logro_params)
-    cumple = true
+      @logro = Logro.new(logro_params)
+      cumple = true
 
-    Logro.all.each do |logr|
-       if(@logro.nombre == logr.nombre)
-          flash[:notice] = 'Ya exite un logro con ese nombre'
-          cumple = false
-       end
-       if(@logro.valor_min <= logr.valor_max)&&(@logro.valor_max >= logr.valor_min)
-         flash[:notice] = 'El puntaje del logro se superpone con otro'
-         cumple = false
-       end
-   end
-
-   if(@logro.valor_min >= @logro.valor_max)
-     flash[:notice] = 'El rango de punajes ingresado es inválido'
-     cumple = false
-   end
-
-   if(cumple)
-     if @logro.save
-       flash[:notice] = 'El Logro se creó exitosamente!'
-       redirect_to listadoLogros_path
-     else
-       redirect_to listadoLogros_path
+      Logro.all.each do |logr|
+         if(@logro.nombre == logr.nombre)
+            flash[:notice] = 'Ya exite un logro con ese nombre'
+            cumple = false
+         end
+         if(@logro.valor_min <= logr.valor_max)
+           flash[:notice] = 'El puntaje del logro se superpone con otro'
+           cumple = false
+         end
      end
-   else
-    redirect_to listadoLogros_path
-   end
-  end
+
+     if(@logro.valor_min >= @logro.valor_max)
+       flash[:notice] = 'El rango de punajes ingresado es inválido'
+       cumple = false
+     end
+
+     if(cumple)
+       if @logro.save
+         flash[:notice] = 'El Logro se creó exitosamente!'
+         redirect_to listadoLogros_path
+       else
+         redirect_to listadoLogros_path
+       end
+     else
+      redirect_to listadoLogros_path
+     end
+    end
+
 
   def edit
     @logro = Logro.find(params[:id])
