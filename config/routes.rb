@@ -1,11 +1,28 @@
 Rails.application.routes.draw do
-  
+
 
   resources :logros
+  resources :postulacions
+  resources :gauchadas
 
   get 'gauchada/index'
 
-  get '/detallesGauchada', to:'gauchada#show'
+  get '/detallesGauchada', to:'gauchadas#show'
+
+   get '/nuevaGauchada', to:'gauchadas#new'
+
+   get '/destruirGauchada', to:'gauchadas#destroy'
+
+   get '/index2Gauchada', to:'gauchadas#index2'
+
+  get '/listadoPostulacions', to:'postulacions#index'
+
+  get '/nuevoPostulacion', to:'postulacions#new'
+
+  get '/editarPostulacion', to:'postulacions#edit'
+
+  get '/eliminarPostulacion', to:'postulacions#destroy'
+
 
   get '/listadoLogros', to:'logros#index'
 
@@ -16,7 +33,7 @@ Rails.application.routes.draw do
   get '/eliminarLogro', to:'logros#destroy'
 
   devise_for :users
-  root 'gauchada#index'
+  root 'gauchadas#index'
   get '/nuevoMonstruo', to:'monstruos#new'
   get '/listadoMonstruos', to:'monstruos#index'
 

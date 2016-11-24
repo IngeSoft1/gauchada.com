@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117223826) do
+ActiveRecord::Schema.define(version: 20161124161202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,11 +27,13 @@ ActiveRecord::Schema.define(version: 20161117223826) do
   create_table "gauchadas", force: :cascade do |t|
     t.string   "descripcion"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "ubicacion"
     t.string   "titulo"
     t.string   "imagen"
+    t.integer  "gauchada_id"
+    t.integer  "postulacion_id"
   end
 
   create_table "logros", force: :cascade do |t|
@@ -47,6 +49,15 @@ ActiveRecord::Schema.define(version: 20161117223826) do
     t.string   "edad"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "postulacions", force: :cascade do |t|
+    t.string   "descripcion"
+    t.string   "localidad"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "gauchada_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,6 +77,8 @@ ActiveRecord::Schema.define(version: 20161117223826) do
     t.datetime "date_of_birth"
     t.boolean  "admin",                  default: false
     t.string   "localidad"
+    t.integer  "gauchada_id"
+    t.integer  "postulacion_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

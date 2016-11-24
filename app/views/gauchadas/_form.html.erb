@@ -1,0 +1,19 @@
+<h3>Nueva Gauchada</h3>
+<div class="Gauchadas">
+<%= form_for (@gauchada) do |f| %>
+<br></br>
+<%= f.label :titulo %>
+<%= f.text_field :titulo, required: true %>
+<br></br>
+<%= f.label :ubicacion %>
+<%= f.text_field :ubicacion, required: true %>
+<br></br>
+<%= f.label :descripcion %>
+<%= f.text_field :descripcion, required: true %>
+<br></br>
+<%= f.label :imagen %>
+<%= f.text_field :imagen, required: true %>
+<br></br>
+<%= f.submit 'Guardar' %>
+<% end %>
+</div>

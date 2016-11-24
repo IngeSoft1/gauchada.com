@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
 
   validates_presence_of :localidad
   has_many :comentarios
+  has_many :postulacions
 end

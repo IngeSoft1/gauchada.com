@@ -1,0 +1,12 @@
+<div class="logros">
+<%= form_for (@postulacion) do |f| %>
+<%= f.hidden_field :gauchada_id, :value => params[:id] %>
+<%= f.label :descripción %>
+<%= f.text_field :descripcion ,required: true %>
+<br></br>
+<%= f.label :localidad %>
+<%= f.text_field :localidad ,required: true %>
+<br></br>
+<%= f.submit 'Guardar', :class => "btn btn-primary dropdown-toggle vermas"%>
+<% end %>
+</div>

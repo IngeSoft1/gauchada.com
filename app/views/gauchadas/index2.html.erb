@@ -1,0 +1,24 @@
+<h1>Listado de Logros</h1>
+  <table class= "table2 table table-hover">
+    <thead>
+      <tr>
+        <th> Descripcion</th>
+        <th> Localidad </th>
+        <th> Gauchada </th>
+        <th> Acciones </th>
+      </tr>
+    </thead>
+<tbody>
+  <% @gauchada.postulacions.all.each do |postu| %>
+    <tr>
+      <td> <%= postu.descripcion %> </td>
+      <td> <%= postu.localidad %> </td>
+      <td> <%= postu.gauchada_id %> </td>
+          <td>
+          <%= link_to "Aceptar", eliminarPostulacion_path(@postulacion, :id => postu.id), class: 'btn btn-danger btn-sm' %></td>
+          <td>
+
+    </tr>
+<% end %>
+</tbody>
+</table>
