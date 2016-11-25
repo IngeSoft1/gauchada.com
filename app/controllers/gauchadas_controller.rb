@@ -40,9 +40,9 @@ class GauchadasController < ApplicationController
   if @gauchada.present?
    @gauchada.destroy
    flash[:notice] = 'La gauchada se elimino exitosamente!'
-   redirect_to gauchada_index_path
+   redirect_to root_url
   else
-   redirect_to gauchada_index_path
+   redirect_to groot_url
   end
   end
   end

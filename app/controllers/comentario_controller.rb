@@ -1,11 +1,11 @@
-class comentarioController < ApplicationController
+class ComentariosController < ApplicationController
   def index
   end
 
   def show
   end
 
-  
+
 
 
 end
