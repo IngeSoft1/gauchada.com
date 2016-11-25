@@ -21,8 +21,14 @@
           <div class="action">
             <br><br>
             <% if user_signed_in?%>
-                <% if current_user.id != @gauchada.user_id %>
-                  <%= link_to "Postularse", nuevoPostulacion_path(@gauchada, :id => @gauchada.id), class: 'btn btn-info btn-sm' %>
+                <% if (current_user.id != @gauchada.user_id)%>
+                  <% if (@gauchada.postulacions.first.present?)%>
+                    <% if (@gauchada.postulacions.first.estado == "Esperando")%>
+                      <%= link_to "Postularse", nuevoPostulacion_path(@gauchada, :id => @gauchada.id), class: 'btn btn-info btn-sm' %>
+                    <% end %>
+                    <%else%>
+                      <%= link_to "Postularse", nuevoPostulacion_path(@gauchada, :id => @gauchada.id), class: 'btn btn-info btn-sm' %>
+                  <% end %>
                 <% end %>
                 <% if current_user.id == @gauchada.user_id %>
                   <%= link_to "Postulados", index2Gauchada_path(@gauchada, :id => @gauchada.id), class: 'btn btn-info btn-sm' %>

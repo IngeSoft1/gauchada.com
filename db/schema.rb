@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124230122) do
+ActiveRecord::Schema.define(version: 20161125011849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20161124230122) do
     t.string   "imagen"
     t.integer  "gauchada_id"
     t.integer  "postulacion_id"
+    t.string   "estado"
   end
 
   create_table "logros", force: :cascade do |t|
@@ -80,6 +81,7 @@ ActiveRecord::Schema.define(version: 20161124230122) do
     t.string   "localidad"
     t.integer  "gauchada_id"
     t.integer  "postulacion_id"
+    t.integer  "puntos"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

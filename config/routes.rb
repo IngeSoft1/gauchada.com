@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   get '/aceptarPostulacion', to:'postulacions#aceptar'
 
+  get '/cumplimientoPostulacion', to:'postulacions#cumplimiento'
+
 
   get '/listadoLogros', to:'logros#index'
 

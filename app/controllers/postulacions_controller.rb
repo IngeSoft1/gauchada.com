@@ -97,6 +97,17 @@ class PostulacionsController < ApplicationController
    redirect_to root_url
   end
 
+  def cumplimiento
+    @postulacion = Postulacion.find(params[:id])
+   if @postulacion.present?
+     @postulacion.estado = "Cumplido"
+     @postulacion.save
+   end
+     flash[:notice] = 'Cumplimiento informado exitosamente!'
+   redirect_to root_url
+  end
+
+
     def destroy
       @postulacion = Postulacion.find(params[:id])
      if @postulacion.present?
