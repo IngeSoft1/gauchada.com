@@ -14,7 +14,7 @@ class PostulacionsController < ApplicationController
   def create
       @postulacion = Postulacion.new(postulante_params)
       @postulacion.user_id = current_user.id
-
+      @postulacion.estado = "Esperando"
       cumple = true
 
       Postulacion.all.each do |postu|
@@ -79,6 +79,22 @@ class PostulacionsController < ApplicationController
    redirect_to listadoPostulantes_path
   end
 
+  end
+
+  def aceptar
+    @postulacion = Postulacion.find(params[:id])
+   if @postulacion.present?
+     @postulacion.estado = "Aceptado"
+     @postulacion.save
+     Gauchada.find(@postulacion.gauchada_id).postulacions.all.each do |postu|
+       if(postu.id != @postulacion.id)
+         postu.estado = "Rechazado"
+         postu.save
+       end
+     end
+     flash[:notice] = 'Postulante seleccionado exitosamente!'
+   end
+   redirect_to root_url
   end
 
     def destroy

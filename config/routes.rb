@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
    get '/index2Gauchada', to:'gauchadas#index2'
 
+
   get '/listadoPostulacions', to:'postulacions#index'
 
   get '/nuevoPostulacion', to:'postulacions#new'
@@ -22,6 +23,8 @@ Rails.application.routes.draw do
   get '/editarPostulacion', to:'postulacions#edit'
 
   get '/eliminarPostulacion', to:'postulacions#destroy'
+
+  get '/aceptarPostulacion', to:'postulacions#aceptar'
 
 
   get '/listadoLogros', to:'logros#index'
