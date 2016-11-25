@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-
+  resources :charges
   resources :logros
   resources :postulacions
   resources :gauchadas
 
+  get 'realizaPago', to:'charges#new'
   get 'gauchada/index'
 
   get '/detallesGauchada', to:'gauchadas#show'

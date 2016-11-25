@@ -46,5 +46,6 @@ group :development do
   gem 'spring'
 
   gem 'devise'
+  gem 'stripe'
 
 end

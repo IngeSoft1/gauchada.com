@@ -37,10 +37,11 @@
               <li ><%= link_to 'Editar perfil', edit_user_registration_path %> </li>
               <li ><%= link_to 'Mis postulaciones', listadoPostulacions_path %> </li>
               <li ><%= link_to 'Nueva Gauchada', nuevaGauchada_path %></li>
+              <li ><%= link_to 'Compra de puntos', realizaPago_path %></li>
             <% if current_user.name == "Administrador"%>
                       <li ><%= link_to 'Listado de logros', listadoLogros_path %></li>
                       <li ><%= link_to 'Nuevo Logro', nuevoLogro_path %></li>
-
+                      <li ><%= link_to 'Compra de puntos', realizaPago_path %></li>
             <% end %>
             <li><%= link_to 'Cerrar sesion', destroy_user_session_path, method: :delete  %></li>
           </ul>
