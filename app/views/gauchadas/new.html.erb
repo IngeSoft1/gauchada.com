@@ -1,2 +1,10 @@
-<h3>Nueva Gauchada</h3>
+<div class="row formularios card">
+
+<% if current_user.puntos  %>
+<%=flash[:notice] = 'Usted tiene puntos disponibles para publicar una nueva gauchada' %>
+
 <%= render 'form' %>
+<% else %>
+<%=flash[:alert] = 'No tiene puntos para publicar una gauchada' %>
+<%end %>
+</div>

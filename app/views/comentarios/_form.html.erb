@@ -1,0 +1,14 @@
+
+<div class="Comentarios">
+<%= form_for (@comentarios) do |f| %>
+<br></br>
+<%= f.label :coment %>
+<%= f.text_field :coment, required: true %>
+<br></br>
+<%= f.hidden_field :Id_gauchada, :value => params[:id] %>
+<% f.hidden_field :Id_usuario, :value => current_user.id%>
+<br></br>
+
+<%= f.submit 'Guardar',class: 'btn btn-danger btn-sm' %>
+<% end %>
+</div>

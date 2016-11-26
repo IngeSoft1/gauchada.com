@@ -32,7 +32,6 @@
                 <% end %>
                 <% if current_user.id == @gauchada.user_id %>
                   <%= link_to "Postulados", index2Gauchada_path(@gauchada, :id => @gauchada.id), class: 'btn btn-info btn-sm' %>
-                  <%= link_to "Eliminar", destruirGauchada_path(@gauchada, :id => @gauchada.id), class: 'btn btn-info btn-sm' %>
                 <% end %>
             <% end %>
           </div>
@@ -42,13 +41,17 @@
 
     </div>
       <div class="Comentarios card">
+
         <h4>Deja tu Comentario</h4>
-        <form role="form">
+        <%= link_to "Comentar", new_comentario_path(@gauchada, :id => @gauchada.id), class: 'btn btn-info btn-sm vermas' %>
+
+        <%= form_tag('comentario/create',:method => "get") do %>
           <div class="form-group">
-            <textarea class="form-control texta" rows="3" required></textarea>
+            <%= text_area_tag :text,nil,class: 'form-control texta',placeholder: 'Ingrese su comentario', required: true  %>
           </div>
-          <button type="submit" class="btn btn-success">Submit</button>
-        </form>
+          <%= hidden_field :gauchada_id, :value => params[:id] %>
+          <%= submit_tag 'Comentar', class:'btn btn-success' %>
+        <% end %>
         <br><br>
         <% @comen = Comentario.where(:Id_gauchada => @gauchada.id).all%>
         <p><span class="badge"><%= @comen.count %></span> Comentarios:</p><br>

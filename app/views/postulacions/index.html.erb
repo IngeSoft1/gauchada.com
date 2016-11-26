@@ -1,5 +1,5 @@
+<div class="tabla-logro ">
 
-<h1>Listado de Logros</h1>
   <table class= "table2 table table-hover">
     <thead>
       <tr>
@@ -18,10 +18,11 @@
       <td> <%= Gauchada.find(postu.gauchada_id).titulo%> </td>
       <td> <%= postu.estado %> </td>
           <td>
-          <%= link_to "Eliminar", eliminarPostulacion_path(@postulacion, :id => postu.id), class: 'btn btn-danger btn-sm' %></td>
+          <%= link_to "Eliminar", eliminarPostulacion_path(@postulacion, :id => postu.id), class: 'btn btn-danger btn-sm' ,:data => { :confirm => 'Esta seguro que desea eliminar?' } %></td>
           <td>
 
     </tr>
 <% end %>
 </tbody>
 </table>
+</div>

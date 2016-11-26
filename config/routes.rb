@@ -1,21 +1,44 @@
 Rails.application.routes.draw do
 
+
+  resources :serchs
   resources :charges
   resources :logros
   resources :postulacions
-  resources :gauchadas
+  resources :gauchadas do
+    collection do
+      get :lugar
+      get :titulo_descripcion
+    end
+  end
+  resources :comentarios
+#rutas de los comentarios
+  get 'comentarios/index'
+
+ get 'comentarios/show'
+
+ get 'comentarios/new'
+
+ get 'comentarios/create'
+
+ get 'comentarios/destroy'
+
+ get 'comentarios/update'
 
   get 'realizaPago', to:'charges#new'
+  #rutas de las gauchadas
   get 'gauchada/index'
-
   get '/detallesGauchada', to:'gauchadas#show'
 
    get '/nuevaGauchada', to:'gauchadas#new'
 
-   get '/destruirGauchada', to:'gauchadas#destroy'
+   get '/eliminarGauchada', to:'gauchadas#destroy'
 
    get '/index2Gauchada', to:'gauchadas#index2'
 
+   get '/index3Gauchada', to:'gauchadas#index3'
+
+   #rutas de las postulaciones
 
   get '/listadoPostulacions', to:'postulacions#index'
 
@@ -29,6 +52,7 @@ Rails.application.routes.draw do
 
   get '/cumplimientoPostulacion', to:'postulacions#cumplimiento'
 
+#rutas de los logros
 
   get '/listadoLogros', to:'logros#index'
 
@@ -38,6 +62,7 @@ Rails.application.routes.draw do
 
   get '/eliminarLogro', to:'logros#destroy'
 
+#rutas de device
   devise_for :users
   root 'gauchadas#index'
   get '/nuevoMonstruo', to:'monstruos#new'

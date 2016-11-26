@@ -1,7 +1,9 @@
 class GauchadasController < ApplicationController
   def index
+    @gauchada= Gauchada.all
   end
-
+  def index3
+  end
   def index2
     @gauchada = Gauchada.find(params[:id])
   end
@@ -24,13 +26,20 @@ class GauchadasController < ApplicationController
      redirect_to root_url
    end
   end
+  def lugar
+    @gauchada = Gauchada.lugar(params[:busqueda]).all
+    render action: :index
+  end
+  def titulo_descripcion
+    @gauchada =Gauchada.titulo_descripcion(params[:busqueda]).all
+    render action: :index
 
+  end
   def update
   end
 
   def edit
   end
-
   def gauchada_params
         params.require(:gauchada).permit(:titulo, :imagen , :descripcion ,:ubicacion)
   end
@@ -40,9 +49,9 @@ class GauchadasController < ApplicationController
   if @gauchada.present?
    @gauchada.destroy
    flash[:notice] = 'La gauchada se elimino exitosamente!'
-   redirect_to root_url
+   redirect_to  index3Gauchada_path
   else
-   redirect_to groot_url
+   redirect_to  index3Gauchada_path
   end
   end
   end
