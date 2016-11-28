@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
-
+#rutas de tarjeta de credio
+resources :cards
   get 'cards/index'
 
   get 'cards/show'
 
-  get 'cards/new'
+  get 'realizaPago' ,to:'cards#new'
 
   get 'cards/destroy'
 
   get 'cards/create'
-
+#ruta de tarjeta de credito
 resources :answers
   get 'answers/index'
 
@@ -50,7 +51,7 @@ resources :answers
 
  get 'comentarios/update'
 
-  get 'realizaPago', to:'charges#new'
+
   #rutas de las gauchadas
   get 'gauchada/index'
   get '/detallesGauchada', to:'gauchadas#show'

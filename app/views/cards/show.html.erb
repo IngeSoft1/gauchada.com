@@ -1,2 +1,14 @@
-<h1>Cards#show</h1>
-<p>Find me in app/views/cards/show.html.erb</p>
+
+
+
+<div class="Gauchadas">
+<%= form_for (@gauchada) do |f| %>
+<br></br>
+<%= f.label :numero %>
+<%= f.text_field :numero, required: true %>
+<br></br>
+<%= f.label :email %>
+<%= f.text_field :email, required: true %>
+<br></br>
+<% end %>
+</div>

@@ -27,7 +27,14 @@ def update
 end
 
 def destroy
+  @comentarios = Comentario.find(params[:id])
+ if @comentarios.present?
+   @comentarios.destroy
+   flash[:notice] = 'El Logro se elimino exitosamente!'
+   redirect_to index3Gauchada_path
+ end
 end
+
 
 
 def comentario_params
