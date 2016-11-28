@@ -59,14 +59,18 @@
           <div class="col-sm-12">
             <% @comen.all.each do |com| %>
             <h4><%= com.Id_usuario %> <small><%=com.created_at%></small></h4>
-
             <p><%= com.coment %></p>
+              <%= link_to "Responder", new_answer_path(com, :id => com.id), class: 'btn btn-info btn-sm vermas' %>
             <br>
-            <div class="row-2 ">
 
+            <div class="row-2 ">
               <div class="col-xs-12">
-                  <h4>Nested Bro <small>Sep 25, 2015, 8:28 PM</small></h4>
-                  <p>Me too! WOW!</p>
+                <% Answer.all.each do |ans| %>
+                  <% if (ans.comentario_id = com.id) %>
+                    <h4><%=User.find(ans.usuario_id).name%><small><%=ans.created_at%></small></h4>
+                    <p><%=ans.res%></p>
+                  <%end%>
+                  <%end%>
                   <br>
                 </div>
               </div>

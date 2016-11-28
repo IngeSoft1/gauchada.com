@@ -1,0 +1,13 @@
+<div class="Respuestas">
+<%= form_for (@answer) do |f| %>
+<br></br>
+<br></br>
+<br></br>
+<%= f.label :res %>
+<%= f.text_field :res, required: true %>
+<br></br>
+<%= f.hidden_field :comentario_id, :value => params[:id] %>
+<br></br>
+<%= f.submit 'Guardar',class: 'btn btn-danger btn-sm' %>
+<% end %>
+</div>

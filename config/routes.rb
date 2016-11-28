@@ -1,5 +1,30 @@
 Rails.application.routes.draw do
 
+  get 'cards/index'
+
+  get 'cards/show'
+
+  get 'cards/new'
+
+  get 'cards/destroy'
+
+  get 'cards/create'
+
+resources :answers
+  get 'answers/index'
+
+  get 'answers/show'
+
+  get 'answers/new'
+
+  get 'answers/create'
+
+  get 'answers/destroy'
+
+  get 'answers/edit'
+
+  get 'answers/update'
+
 
   resources :serchs
   resources :charges

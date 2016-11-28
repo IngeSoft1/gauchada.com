@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125011849) do
+ActiveRecord::Schema.define(version: 20161128165539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.string   "res"
+    t.integer  "comentario_id"
+    t.integer  "usuario_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.string   "numero"
+    t.string   "email_usuario"
+    t.integer  "usuario_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "comentarios", force: :cascade do |t|
     t.text     "coment"
@@ -59,6 +75,23 @@ ActiveRecord::Schema.define(version: 20161125011849) do
     t.datetime "updated_at",  null: false
     t.integer  "gauchada_id"
     t.string   "estado"
+  end
+
+  create_table "respuesta", force: :cascade do |t|
+    t.integer  "respuesta_id"
+    t.integer  "gauchada_id"
+    t.string   "comentario"
+    t.integer  "usuario_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "respuestas", force: :cascade do |t|
+    t.string   "res"
+    t.integer  "comentario_id"
+    t.integer  "usuario_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
