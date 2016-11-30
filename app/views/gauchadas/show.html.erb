@@ -42,15 +42,17 @@
       <div class="Comentarios card">
 
         <h4>Deja tu Comentario</h4>
-        <%= link_to "Comentar", new_comentario_path(@gauchada, :id => @gauchada.id), class: 'btn btn-info btn-sm vermas' %>
-
-        <%= form_tag('comentario/create',:method => "get") do %>
-          <div class="form-group">
-            <%= text_area_tag :text,nil,class: 'form-control texta',placeholder: 'Ingrese su comentario', required: true  %>
-          </div>
-          <%= hidden_field :gauchada_id, :value => params[:id] %>
-          <%= submit_tag 'Comentar', class:'btn btn-success' %>
+        <%= form_for (@comentarios) do |f| %>
+        <br></br>
+        <%= f.label :coment %>
+        <%= f.text_field :coment, required: true %>
+        <br></br>
+        <%= f.hidden_field :Id_gauchada, :value => params[:id] %>
+        <%= f.hidden_field :Id_usuario, :value => current_user.id%>
+        <br></br>
+        <%= f.submit 'Guardar',class: 'btn btn-danger btn-sm' %>
         <% end %>
+        
         <br><br>
         <% @comen = Comentario.where(:Id_gauchada => @gauchada.id).all%>
         <p><span class="badge"><%= @comen.count %></span> Comentarios:</p><br>
@@ -63,11 +65,11 @@
               <%= link_to "Responder", new_answer_path(com, :id => com.id), class: 'btn btn-info btn-sm vermas' %>
 
              <br>
-            
+
             <div class="row-2 ">
               <div class="col-xs-12">
                 <% Answer.all.each do |ans| %>
-                  <% if (ans.comentario_id = com.id) %>
+                  <% if (ans.comentario_id == com.id) %>
                     <h4><%=User.find(ans.usuario_id).name%><small><%=ans.created_at%></small></h4>
                     <p><%=ans.res%></p>
                   <%end%>

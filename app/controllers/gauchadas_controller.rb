@@ -10,6 +10,7 @@ class GauchadasController < ApplicationController
 
   def show
     @gauchada = Gauchada.find(params[:id])
+    @comentarios = Comentario.new
   end
 
   def new
@@ -40,6 +41,7 @@ class GauchadasController < ApplicationController
 
   def edit
   end
+
   def gauchada_params
         params.require(:gauchada).permit(:titulo, :imagen , :descripcion ,:ubicacion)
   end
