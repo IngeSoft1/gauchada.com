@@ -64,6 +64,8 @@ resources :answers
 
    get '/index3Gauchada', to:'gauchadas#index3'
 
+   get '/republicarGauchada', to:'gauchadas#republicar'
+
    #rutas de las postulaciones
 
   get '/listadoPostulacions', to:'postulacions#index'
@@ -77,6 +79,8 @@ resources :answers
   get '/aceptarPostulacion', to:'postulacions#aceptar'
 
   get '/cumplimientoPostulacion', to:'postulacions#cumplimiento'
+
+  get '/inCumplimientoPostulacion', to:'postulacions#inCumplimiento'
 
 #rutas de los logros
 

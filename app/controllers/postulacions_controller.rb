@@ -103,12 +103,27 @@ class PostulacionsController < ApplicationController
      @postulacion.estado = "Cumplido"
      @postulacion.save
      @user = User.find(@postulacion.user_id)
-     @user.puntos = (@user.puntos + 1)
+     @user.puntos = (@user.puntos + 1)  #OJO si el usuario tiene puntaje NULL se rompe, pero los usuarios nunca van a tener NULL, solo los q estan desde antes
      @user.save
    end
      flash[:notice] = 'Cumplimiento informado exitosamente!'
    redirect_to root_url
   end
+
+
+  def inCumplimiento
+    @postulacion = Postulacion.find(params[:id])
+   if @postulacion.present?
+     @postulacion.estado = "No cumplio"
+     @postulacion.save
+     @user = User.find(@postulacion.user_id)
+     @user.puntos = (@user.puntos - 2)  #OJO si el usuario tiene puntaje NULL se rompe, pero los usuarios nunca van a tener NULL, solo los q estan desde antes
+     @user.save
+   end
+     flash[:notice] = 'Incumplimiento informado exitosamente!'
+   redirect_to root_url
+  end
+
 
 
     def destroy

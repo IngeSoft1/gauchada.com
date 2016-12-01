@@ -2,8 +2,10 @@ class GauchadasController < ApplicationController
   def index
     @gauchada= Gauchada.all
   end
+
   def index3
   end
+
   def index2
     @gauchada = Gauchada.find(params[:id])
   end
@@ -15,6 +17,14 @@ class GauchadasController < ApplicationController
 
   def new
    @gauchada = Gauchada.new
+  end
+
+  def republicar
+    @gauchada = Gauchada.find(params[:id])
+    @gauchada.postulacions.all.each do |postu|
+      postu.destroy
+    end
+    redirect_to  index3Gauchada_path
   end
 
   def create
@@ -29,15 +39,17 @@ class GauchadasController < ApplicationController
      redirect_to root_url
    end
   end
+
   def lugar
     @gauchada = Gauchada.lugar(params[:busqueda]).all
     render action: :index
   end
+
   def titulo_descripcion
     @gauchada =Gauchada.titulo_descripcion(params[:busqueda]).all
     render action: :index
-
   end
+
   def update
   end
 

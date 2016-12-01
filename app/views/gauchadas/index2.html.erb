@@ -17,11 +17,12 @@
       <td> <%= Gauchada.find(postu.gauchada_id).titulo%></td>
       <td> <%= postu.estado%> </td>
           <td>
-          <%if(postu.estado != "Aceptado") && (postu.estado != "Rechazado") && (postu.estado != "Cumplido")%>
+          <%if(postu.estado != "Aceptado") && (postu.estado != "Rechazado") && (postu.estado != "Cumplido") && (postu.estado != "No cumplio")%>
             <%= link_to "Aceptar", aceptarPostulacion_path(@postulacion, :id => postu.id), class: 'btn btn-danger btn-sm' %>
           <% end %>
           <%if(postu.estado == "Aceptado")%>
             <%= link_to "Cumplio", cumplimientoPostulacion_path(@postulacion, :id => postu.id), class: 'btn btn-danger btn-sm' %>
+            <%= link_to "No cumplio", inCumplimientoPostulacion_path(@postulacion, :id => postu.id), class: 'btn btn-danger btn-sm' %>
           <% end %>
         </td>
           <td>
