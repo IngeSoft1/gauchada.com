@@ -27,6 +27,14 @@ class GauchadasController < ApplicationController
     redirect_to  index3Gauchada_path
   end
 
+  def devolver_puntos
+    @gauchada = Gauchada.find(params[:id])
+    @gauchada.destroy
+    current_user.puntos = (current_user.puntos + 1) #Sumo 1 punto por eliminar gauchada no cumplida
+    current_user.save       #Guardo el usuario con el campo de puntos modificado
+    redirect_to root_url
+  end
+
   def create
    @gauchada = Gauchada.new(gauchada_params)
    @gauchada.user_id = current_user.id

@@ -35,6 +35,7 @@
                   <% if (@gauchada.postulacions.first.present?)%>
                     <% if (@gauchada.postulacions.first.estado == "No cumplio")%>
                       <%= link_to "Republicar", republicarGauchada_path(@gauchada, :id => @gauchada.id), class: 'btn btn-info btn-sm' %>
+                      <%= link_to "Eliminar y reintegrar puntos", devolverPuntosGauchada_path(@gauchada, :id => @gauchada.id), class: 'btn btn-info btn-sm' %>
                     <% end %>
                   <% end %>
                 <% end %>

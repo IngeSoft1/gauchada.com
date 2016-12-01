@@ -66,6 +66,8 @@ resources :answers
 
    get '/republicarGauchada', to:'gauchadas#republicar'
 
+   get '/devolverPuntosGauchada', to:'gauchadas#devolver_puntos'
+
    #rutas de las postulaciones
 
   get '/listadoPostulacions', to:'postulacions#index'
