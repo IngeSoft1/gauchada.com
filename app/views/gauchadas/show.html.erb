@@ -39,6 +39,7 @@
     </div>
 
     </div>
+    <% if user_signed_in?%>
       <div class="Comentarios card">
 
         <h4>Deja tu Comentario</h4>
@@ -52,7 +53,7 @@
         <br></br>
         <%= f.submit 'Guardar',class: 'btn btn-danger btn-sm' %>
         <% end %>
-        
+
         <br><br>
         <% @comen = Comentario.where(:Id_gauchada => @gauchada.id).all%>
         <p><span class="badge"><%= @comen.count %></span> Comentarios:</p><br>
@@ -81,5 +82,6 @@
           </div>
         </div>
     </div>
+    <% end %>
 
 </div>
