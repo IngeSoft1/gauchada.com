@@ -102,6 +102,9 @@ class PostulacionsController < ApplicationController
    if @postulacion.present?
      @postulacion.estado = "Cumplido"
      @postulacion.save
+     @user = User.find(@postulacion.user_id)
+     @user.puntos = (@user.puntos + 1)
+     @user.save
    end
      flash[:notice] = 'Cumplimiento informado exitosamente!'
    redirect_to root_url

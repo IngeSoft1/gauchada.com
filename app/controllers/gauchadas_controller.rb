@@ -22,6 +22,8 @@ class GauchadasController < ApplicationController
    @gauchada.user_id = current_user.id
    if @gauchada.save
      flash[:notice] = 'La Gauchada se creó exitosamente!'
+     current_user.puntos = (current_user.puntos - 1) #Resto 1 punto por crear nueva gauchada
+     current_user.save       #Guardo el usuario con el campo de puntos modificado
      redirect_to root_url
    else
      redirect_to root_url
