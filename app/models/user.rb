@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :name
 
   validates_presence_of :localidad
+  validates_presence_of :puntos
   has_many :comentarios
   has_many :postulacions
 end
