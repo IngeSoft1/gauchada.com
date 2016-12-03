@@ -53,7 +53,7 @@
         <%= form_for (@comentarios) do |f| %>
         <br></br>
         <%=text_area(:comentario, :coment, size: "111x5",required: true)%>
-        <%= f.hidden_field :Id_gauchada, :value => params[:id] %>
+        <%= f.hidden_field :Id_gauchada, :value => @gauchada.id %>
         <%= f.hidden_field :Id_usuario, :value => current_user.id%>
         <br></br>
         <%= f.submit 'Guardar',class: 'btn btn-danger btn-sm' %>
@@ -69,8 +69,6 @@
             <h4><b><%= use.name%></b>  <small> <%=com.created_at%> </small></h4>
             <p><%= com.coment %></p>
 
-              <%= link_to "Responder", new_answer_path(com, :id => com.id), class: 'btn btn-info btn-sm vermas' %>
-
              <br>
 
             <div class="row-2 ">
@@ -81,6 +79,14 @@
                           <p><%=ans.res%></p>
                   <%end%>
                   <%end%>
+                  <%= form_for (@answer) do |f| %>
+                  <%= f.label :res %>
+                  <%= f.text_field :res, required: true %>
+                  <br></br>
+                  <%= f.hidden_field :comentario_id, :value => com.id %>
+                  <%= f.submit 'Responder',class: 'btn btn-danger btn-sm' %>
+                  <% end %>
+
                   <br>
                 </div>
               </div>

@@ -14,7 +14,7 @@ class AnswersController < ApplicationController
     @answer.usuario_id = current_user.id
     if @answer.save
       flash[:notice] = "Se realizo una Respuesta"
-      redirect_to index3Gauchada_path
+      redirect_to :back
     end
   end
 
