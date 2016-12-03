@@ -14,11 +14,10 @@ def create
    @comentarios =  Comentario.new(comentario_params)
    @comentarios.Id_usuario = current_user.id
   if @comentarios.save
-    flash[:notice] = 'El comentario se creo exitosamente!'
-    redirect_to index3Gauchada_path
+    redirect_to :back
   else
-    redirect_to index3Gauchada_path
-  end
+    redirect_to :back
+    end
 end
 def edit
 end
@@ -30,7 +29,7 @@ def destroy
   @comentarios = Comentario.find(params[:id])
  if @comentarios.present?
    @comentarios.destroy
-   flash[:notice] = 'El Logro se elimino exitosamente!'
+   flash[:notice] = 'El Comentario se elimino exitosamente junto a sus respuestas'
    redirect_to index3Gauchada_path
  end
 end
