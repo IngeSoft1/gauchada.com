@@ -5,6 +5,7 @@ class CreateCards < ActiveRecord::Migration
       t.string :email_usuario
       t.integer :usuario_id
 
+
       t.timestamps null: false
     end
   end

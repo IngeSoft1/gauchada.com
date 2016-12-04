@@ -36,22 +36,23 @@ if @card.save
             else
                 num = true
             end
-      end
+    	end
     else
         ema = true
     end
-    end
   end
-  if num
-      redirect_to :back
-      flash[:alert] = 'El numero de tarjeta es incorrecto'
-  else
-    if ema
-      redirect_to :back
-      flash[:alert]= 'El Email ingersado es incorrecto'
+end
 
-    end
-  end
+  if num
+      redirect_to realizaPago_path
+      flash[:alert] = 'El numero de tarjeta es incorrecto'
+    else
+      if ema
+        redirect_to realizaPago_path
+        flash[:alert] = 'El mail de tarjeta es incorrecto'
+      end
+ end
+
 end
 
 

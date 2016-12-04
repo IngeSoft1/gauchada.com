@@ -31,5 +31,5 @@ Comentario.find_or_create_by(coment:"Cuanto tiempo es esto",Id_usuario:2,Id_gauc
 Comentario.find_or_create_by(coment:"mmmm pato a la naranja mmmm",Id_usuario:2,Id_gauchada:1);
 Comentario.find_or_create_by(coment:"te pago 1 centavo por el pato y tu usuario",Id_usuario:4,Id_gauchada:1);
 Comentario.find_or_create_by(coment:"holaaaaaa patolandia",Id_usuario:3,Id_gauchada:1);
- puts "Creo la base de tarjetas de credito"
+puts "Creo la base de tarjetas de credito"
  Card.find_or_create_by(numero:"12345", usuario_id:1,email_usuario:"admin@gmail.com");
