@@ -85,12 +85,12 @@ class LogrosController < ApplicationController
 
 end
 
-    def destroy
-      @logro = Logro.find(params[:id])
-     if @logro.present?
-       @logro.destroy
-       flash[:notice] = 'El Logro se elimino exitosamente!'
-     end
-     redirect_to listadoLogros_path
-    end
+def destroy
+    @logro = Logro.find(params[:id])
+ if @logro.present?
+     @logro.destroy
+     flash[:notice] = 'El Logro se elimino exitosamente!'
+ end
+   redirect_to listadoLogros_path
+end
 end

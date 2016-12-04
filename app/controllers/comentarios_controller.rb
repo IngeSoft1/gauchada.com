@@ -28,9 +28,16 @@ end
 def destroy
   @comentarios = Comentario.find(params[:id])
  if @comentarios.present?
+
+   Answer.all.each do |ans|
+      if (ans.comentario_id == @comentarios.id)
+          ans.destroy
+      end
+   end
+   
    @comentarios.destroy
    flash[:notice] = 'El Comentario se elimino exitosamente junto a sus respuestas'
-   redirect_to index3Gauchada_path
+   redirect_to :back
  end
 end
 

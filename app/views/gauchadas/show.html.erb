@@ -67,7 +67,7 @@
             <% @comen.all.each do |com| %>
             <%use = User.find(com.Id_usuario)%>
             <h4><b><%= use.name%></b>  <small> <%=com.created_at%> </small></h4>
-            <p><%= com.coment %></p>
+            <p><%= com.coment %></p>   <%= link_to "Eliminar", eliminarComentario_path(@comentarios, :id => com.id), class: 'btn btn-danger btn-sm',:data => { :confirm => 'Esta seguro que desea eliminar?'} %></td>
 
              <br>
 

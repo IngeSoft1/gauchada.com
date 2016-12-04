@@ -47,7 +47,7 @@ resources :answers
 
  get 'comentarios/create'
 
- get 'comentarios/destroy'
+ get  'eliminarComentario', to:'comentarios#destroy'
 
  get 'comentarios/update'
 

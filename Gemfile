@@ -47,5 +47,6 @@ group :development do
   gem 'hirb'
   gem 'devise'
   gem 'stripe'
+  gem 'jquery-rails'
 
 end
