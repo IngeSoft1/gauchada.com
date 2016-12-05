@@ -1,15 +1,27 @@
-<h1>Compra de puntos con tarjeta de credito</h1>
 <div class="Tarjeta de Credito">
+  <div class="row formularios">
+    <div class="col-lg-4 col-lg-offset-4 well">
+      <h3 class="text-center">Compra de puntos</h3>
+
 <%= form_for (@card) do |f| %>
 <br></br>
-<br></br>
-<br></br>
-<%= f.label :numero %>
-<%= f.text_field :numero, required: true %>
-<br></br>
-<%= f.label :email_usuario %>
+
+<div class="field">
+  <%= f.label :numero %><br />
+  <%= f.text_field :numero, required: true %>
+</div>
+
+<div class="field">
+<%= f.label :email_usuario %><br />
 <%= f.text_field :email_usuario, required: true %>
+</div>
+<div class="field">
+  <%= f.label :cv %><br />
+  <%= f.text_field :cv, required: true %>
+</div>
 <br></br>
 <%= f.submit 'Comprar',class: 'btn btn-danger btn-sm' %>
 <% end %>
+</div>
+</div>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128165539) do
+ActiveRecord::Schema.define(version: 20161205151324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 20161128165539) do
     t.integer  "usuario_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "nombre"
+    t.string   "apellido"
+    t.integer  "cv"
   end
 
   create_table "comentarios", force: :cascade do |t|
@@ -48,7 +51,6 @@ ActiveRecord::Schema.define(version: 20161128165539) do
     t.string   "ubicacion"
     t.string   "titulo"
     t.string   "imagen"
-    t.integer  "gauchada_id"
     t.integer  "postulacion_id"
     t.string   "estado"
   end
@@ -78,6 +80,23 @@ ActiveRecord::Schema.define(version: 20161128165539) do
     t.string   "estado"
   end
 
+  create_table "respuesta", force: :cascade do |t|
+    t.integer  "respuesta_id"
+    t.integer  "gauchada_id"
+    t.string   "comentario"
+    t.integer  "usuario_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "respuestas", force: :cascade do |t|
+    t.string   "res"
+    t.integer  "comentario_id"
+    t.integer  "usuario_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -95,7 +114,6 @@ ActiveRecord::Schema.define(version: 20161128165539) do
     t.datetime "date_of_birth"
     t.boolean  "admin",                  default: false
     t.string   "localidad"
-    t.integer  "gauchada_id"
     t.integer  "postulacion_id"
     t.integer  "puntos"
   end
