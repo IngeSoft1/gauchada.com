@@ -81,18 +81,10 @@ ActiveRecord::Schema.define(version: 20161205151324) do
   end
 
   create_table "respuesta", force: :cascade do |t|
-    t.integer  "respuesta_id"
-    t.integer  "gauchada_id"
-    t.string   "comentario"
-    t.integer  "usuario_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "respuestas", force: :cascade do |t|
-    t.string   "res"
-    t.integer  "comentario_id"
-    t.integer  "usuario_id"
+    t.text     "respuesta"
+    t.integer  "Id_usuario"
+    t.integer  "Id_gauchada"
+    t.integer  "Id_comentario"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

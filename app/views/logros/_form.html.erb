@@ -1,15 +1,30 @@
-<div class="logros">
-<%= form_for (@logro) do |f| %>
-<%= f.label :nombre %>
-<%= f.text_field :nombre ,required: true %>
-<br></br>
-<%= f.label :valor_minimo %>
-<%= f.number_field :valor_min ,required: true %>
-<br></br>
+<div class="Tarjeta de Credito">
+  <div class="row formularios">
+    <div class="col-lg-4 col-lg-offset-4 well">
+      <h3 class="text-center">Nuevo Logro</h3>
 
-<%= f.label :valor_maximo %>
-<%= f.number_field :valor_max ,required: true %>
-<br></br>
-<%= f.submit 'Guardar', :class => "btn btn-primary dropdown-toggle vermas"%>
-<% end %>
+      <%= form_for (@logro) do |f| %>
+      <br>
+      <div class="field">
+      <%= f.label :nombre %><br>
+      <%= f.text_field :nombre ,required: true %>
+      </div>
+      <br>
+      <div class="field">
+      <%= f.label :valor_minimo %><br>
+      <%= f.number_field :valor_min ,required: true %>
+      </div>
+      <br>
+      <div class="field">
+
+      <%= f.label :valor_maximo %><br>
+      <%= f.number_field :valor_max ,required: true %>
+      </div>
+      <br>
+      <div class="field">
+      <%= f.submit 'Guardar', :class => "btn btn-primary dropdown-toggle"%>
+    </div>
+      <% end %>
+</div>
+</div>
 </div>

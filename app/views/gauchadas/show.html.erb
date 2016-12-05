@@ -52,7 +52,7 @@
         <h4>Deja tu Comentario</h4>
         <%= form_for (@comentarios) do |f| %>
         <br></br>
-        <%=text_area(:comentario, :coment, size: "111x5",required: true)%>
+        <%=text_area(:comentario, :coment, size: "100x5",placeholder: 'Ingrese su comentario',required: true)%>
         <%= f.hidden_field :Id_gauchada, :value => @gauchada.id %>
         <%= f.hidden_field :Id_usuario, :value => current_user.id%>
         <br></br>
@@ -69,7 +69,7 @@
             <h4><b><%= use.name%></b>  <small> <%=com.created_at%> </small></h4>
             <p><%= com.coment %></p>   <%= link_to "Eliminar", eliminarComentario_path(@comentarios, :id => com.id), class: 'btn btn-danger btn-sm',:data => { :confirm => 'Esta seguro que desea eliminar?'} %></td>
 
-             <br>
+             <br><br>
 
             <div class="row-2 ">
               <div class="col-xs-12">
@@ -81,10 +81,10 @@
                   <%end%>
                   <%= form_for (@answer) do |f| %>
                   <%= f.label :res %>
-                  <%= f.text_field :res, required: true %>
+                  <%= f.text_field :res,placeholder: 'Respuesta..', required: true %>
                   <br></br>
                   <%= f.hidden_field :comentario_id, :value => com.id %>
-                  <%= f.submit 'Responder',class: 'btn btn-danger btn-sm' %>
+                  <%= f.submit 'Responder',class: ' res btn btn-danger btn-sm' %>
                   <% end %>
 
                   <br>

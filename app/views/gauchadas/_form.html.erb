@@ -1,20 +1,37 @@
-<div class="logros">
-<div class="Gauchadas">
-<%= form_for (@gauchada) do |f| %>
-<br></br>
-<%= f.label :titulo %>
-<%= f.text_field :titulo, required: true %>
-<br></br>
-<%= f.label :ubicacion %>
-<%= f.text_field :ubicacion, required: true %>
-<br></br>
-<%= f.label :descripcion %>
-<%= f.text_field :descripcion, required: true %>
-<br></br>
-<%= f.label :imagen %>
-<%= f.text_field :imagen, required: true %>
-<br></br>
-<%= f.submit 'Guardar',class: 'btn btn-danger btn-sm' %>
-<% end %>
+<div class="Tarjeta de Credito">
+  <div class="row formularios">
+    <div class="col-lg-4 col-lg-offset-4 well">
+      <h3 class="text-center">Nueva Gauchada</h3>
+      <%= form_for (@gauchada) do |f| %>
+      <br>
+      <div class="field">
+      <%= f.label :titulo %>
+      </div>
+      <br>
+      <div class="field">
+      <%= f.text_field :titulo, required: true %>
+      </div>
+      <br>
+      <div class="field">
+      <%= f.label :ubicacion %><br>
+      <%= f.text_field :ubicacion, required: true %>
+      </div>
+      <br>
+      <div class="field">
+      <%= f.label :descripcion %><br>
+      <%= f.text_field :descripcion, required: true %>
+      </div>
+      <br>
+      <div class="field">
+      <%= f.label :imagen %><br>
+      <%= f.text_field :imagen, required: true %>
+      </div>
+      <br>
+      <div class="field">
+      <%= f.submit 'Guardar',class: 'btn btn-danger btn-sm' %>
+    </div>
+
+      <% end %>
+    </div>
 </div>
 </div>
