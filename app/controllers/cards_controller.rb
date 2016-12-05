@@ -22,6 +22,7 @@ class CardsController < ApplicationController
     cv_veri = false
     num = false
     ema = false
+<<<<<<< HEAD
     id_email = 0
     id_num = 9999
 
@@ -68,6 +69,41 @@ class CardsController < ApplicationController
       redirect_to :back
       flash[:alert]= 'Los campos ingresado son incorrectos'
     end
+=======
+if @card.save
+    @card.destroy
+    Card.all.each do |tarjeta|
+      if (tarjeta.email_usuario == email)
+        if(tarjeta.usuario_id == usuario)
+            if(tarjeta.numero == numero)
+
+                  flash[:notice] = 'Se realizo la compra de puntos satifactoriamente'
+                  usua = User.find(usuario)
+                  usua.puntos = usua.puntos + 1
+                  usua.save
+                  num = false
+                  ema = false
+                  redirect_to root_path
+            else
+                num = true
+            end
+    	end
+    else
+        ema = true
+    end
+  end
+end
+
+  if num
+      redirect_to realizaPago_path
+      flash[:alert] = 'El numero de tarjeta es incorrecto'
+    else
+      if ema
+        redirect_to realizaPago_path
+        flash[:alert] = 'El mail de tarjeta es incorrecto'
+      end
+ end
+>>>>>>> f3e89f6fb456dddd6bc51721b65b6301c79a755c
 
 end
 
