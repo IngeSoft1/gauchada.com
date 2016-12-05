@@ -22,9 +22,9 @@ class CardsController < ApplicationController
     cv_veri = false
     num = false
     ema = false
-<<<<<<< HEAD
     id_email = 0
     id_num = 9999
+    id_cv = 4444
 
     if @card.save
       @card.destroy
@@ -35,6 +35,7 @@ class CardsController < ApplicationController
           end
           if (cv == tarjeta.cv)
             cv_veri = true
+            id_cv = tarjeta.id
           end
           if (numero == tarjeta.numero)
             num = true
@@ -43,67 +44,40 @@ class CardsController < ApplicationController
       end
     end
 
-    if (id_email == id_num)
+listo = false
+if (id_email == id_num) && (id_cv == id_email)
                 flash[:notice] = 'Se realizo la compra de puntos satifactoriamente'
                 usua = User.find(usuario)
                 usua.puntos = usua.puntos + 1
                 usua.save
                 num = false
                 ema = false
+                listo = true
                 redirect_to root_path
-    end
+end
 
-    if (ema)
+if (ema) && (listo ==false)
       redirect_to realizaPago_path
       flash[:alert] = 'El numero de tarjeta es incorrecto'
-    end
-    if num
-      redirect_to :back
-      flash[:alert]= 'El Email ingersado es incorrecto'
-    end
-    if cv_veri
-      redirect_to :back
-      flash[:alert]= 'El CV ingersado es incorrecto'
-    end
-    if (ema == false) && (num == false) && (cv_veri == false)
+      listo = true
+end
+if num && (listo ==false)
+  redirect_to realizaPago_path
+  flash[:alert]= 'El Email ingersado es incorrecto'
+  listo = true
+end
+if cv_veri && (listo ==false)
+  redirect_to realizaPago_path
+  flash[:alert]= 'El CV ingersado es incorrecto'
+  listo = true
+end
+if (ema == false) && (num == false)
+  if(cv_veri == false)
       redirect_to :back
       flash[:alert]= 'Los campos ingresado son incorrectos'
     end
-=======
-if @card.save
-    @card.destroy
-    Card.all.each do |tarjeta|
-      if (tarjeta.email_usuario == email)
-        if(tarjeta.usuario_id == usuario)
-            if(tarjeta.numero == numero)
-
-                  flash[:notice] = 'Se realizo la compra de puntos satifactoriamente'
-                  usua = User.find(usuario)
-                  usua.puntos = usua.puntos + 1
-                  usua.save
-                  num = false
-                  ema = false
-                  redirect_to root_path
-            else
-                num = true
-            end
-    	end
-    else
-        ema = true
-    end
-  end
 end
 
-  if num
-      redirect_to realizaPago_path
-      flash[:alert] = 'El numero de tarjeta es incorrecto'
-    else
-      if ema
-        redirect_to realizaPago_path
-        flash[:alert] = 'El mail de tarjeta es incorrecto'
-      end
- end
->>>>>>> f3e89f6fb456dddd6bc51721b65b6301c79a755c
 
 end
 

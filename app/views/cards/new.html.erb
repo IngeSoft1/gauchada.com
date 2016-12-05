@@ -5,10 +5,7 @@
 
 <%= form_for (@card) do |f| %>
 <br></br>
-<<<<<<< HEAD
 
-=======
->>>>>>> f3e89f6fb456dddd6bc51721b65b6301c79a755c
 <div class="field">
   <%= f.label :numero %><br />
   <%= f.text_field :numero, required: true %>
@@ -18,13 +15,12 @@
 <%= f.label :email_usuario %><br />
 <%= f.text_field :email_usuario, required: true %>
 </div>
-<<<<<<< HEAD
+
 <div class="field">
   <%= f.label :cv %><br />
-  <%= f.text_field :cv, required: true %>
+  <%= f.text_field :cv, required: true ,autofocus: true %>
 </div>
-=======
->>>>>>> f3e89f6fb456dddd6bc51721b65b6301c79a755c
+
 <br></br>
 <%= f.submit 'Comprar',class: 'btn btn-danger btn-sm' %>
 <% end %>
