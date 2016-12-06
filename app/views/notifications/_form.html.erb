@@ -1,0 +1,23 @@
+<div class="Nueva Notificacion">
+  <div class="row formularios">
+    <div class="col-lg-4 col-lg-offset-4 well">
+      <h3 class="text-center">Notificacion</h3>
+      <h5 class="text-center"> Considere que la notificacion sera entregada
+        usuario dueño de la gauchada y que eliminara la misma<h5>
+
+<%= form_for (@notifications) do |f| %>
+<br></br>
+
+<div class="field">
+
+    <%= text_area(:notification, :texto, size: "40x5", placeholder: 'Ingrese su comentario',required: true)%>
+
+</div>
+  <%= f.hidden_field :usuario_id, :value => @gauchada.user_id %>
+  <%= f.hidden_field :gauchada_id, :value => params[:id] %>
+<br></br>
+<%= f.submit 'Enviar',class: 'btn btn-danger btn-sm' %>
+<% end %>
+</div>
+</div>
+</div>

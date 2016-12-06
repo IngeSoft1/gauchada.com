@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205151324) do
+ActiveRecord::Schema.define(version: 20161206022355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,20 @@ ActiveRecord::Schema.define(version: 20161205151324) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "estadisticas", force: :cascade do |t|
+    t.string   "texto"
+    t.integer  "cant1"
+    t.integer  "cant2"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "usuario"
+    t.integer  "fecha"
+    t.integer  "comentarios"
+    t.integer  "pagos"
+    t.integer  "resupuestas"
+    t.integer  "respuestas"
+  end
+
   create_table "gauchadas", force: :cascade do |t|
     t.string   "descripcion"
     t.integer  "user_id"
@@ -70,6 +84,16 @@ ActiveRecord::Schema.define(version: 20161205151324) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.string   "texto"
+    t.integer  "usuario_id"
+    t.integer  "gauchada_id"
+    t.integer  "comentario_id"
+    t.integer  "respuesta_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "postulacions", force: :cascade do |t|
     t.string   "descripcion"
     t.string   "localidad"
@@ -81,10 +105,18 @@ ActiveRecord::Schema.define(version: 20161205151324) do
   end
 
   create_table "respuesta", force: :cascade do |t|
-    t.text     "respuesta"
-    t.integer  "Id_usuario"
-    t.integer  "Id_gauchada"
-    t.integer  "Id_comentario"
+    t.integer  "respuesta_id"
+    t.integer  "gauchada_id"
+    t.string   "comentario"
+    t.integer  "usuario_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "respuestas", force: :cascade do |t|
+    t.string   "res"
+    t.integer  "comentario_id"
+    t.integer  "usuario_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
