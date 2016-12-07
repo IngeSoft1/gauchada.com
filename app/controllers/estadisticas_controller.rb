@@ -19,47 +19,53 @@ class EstadisticasController < ApplicationController
         pago = pago + estadi.pagos
         gaucha = gaucha + estadi.cant1
     end
-    @bar = Gchart.pie(:size => '500x400',:title  => "Futuras Estadisticas",:legend => ['Usuarios','Gauchadas' ,'Comentarios', 'Pagos realizados', 'respuestas'],:custom => "chp=0.628",:data => [usu,gaucha,comen,pago,res])
+    @bar = Gchart.pie_3d(:size => '700x400',
+    :title  => "Estadisticas Anuales",
+    :data => [usu,gaucha,comen,pago,res],
+    :labels => ["Usuarios", "Gauchadas", "Comentarios", "Pagos", "Respuestas"] )
   end
 
   def show2
-    @estadistica = Estadistica.find(params[:id])
-    if @estadistica.id == 36
+    @estadistica = Estadistica.find(params[:fecha])
+    if @estadistica.fecha == 1
       titulo = "Estadisticas de Enero "
     end
-    if @estadistica.id == 37
+    if @estadistica.fecha == 2
       titulo = "Estadisticas de Febrero "
     end
-    if @estadistica.id == 38
+    if @estadistica.fecha == 3
       titulo = "Estadisticas de Marzo "
     end
-    if @estadistica.id == 39
+    if @estadistica.fecha == 4
       titulo = "Estadisticas de Abril "
     end
-    if @estadistica.id == 40
+    if @estadistica.fecha == 5
       titulo = "Estadisticas de Mayo "
     end
-    if @estadistica.id == 41
+    if @estadistica.fecha == 6
       titulo = "Estadisticas de Junio "
     end
-    if @estadistica.id == 42
+    if @estadistica.fecha == 7
       titulo = "Estadisticas de Julio "
     end
-    if @estadistica.id == 43
+    if @estadistica.fecha == 8
       titulo = "Estadisticas de Agosto "
     end
-    if @estadistica.id == 44
+    if @estadistica.fecha == 9
       titulo = "Estadisticas de Septiembre "
     end
-    if @estadistica.id == 45
+    if @estadistica.fecha == 10
       titulo = "Estadisticas de Octubre "
     end
-    if @estadistica.id == 46
+    if @estadistica.fecha == 11
       titulo = "Estadisticas de Noviembre  "
     end
-    if @estadistica.id == 47
+    if @estadistica.fecha == 12
       titulo = "Estadisticas de Diciembre  "
     end
-    @bar = Gchart.pie(:size => '500x400',:title  => titulo,:legend => ['Usuarios','Gauchadas' ,'Comentarios', 'Pagos realizados', 'Respuestas'],:custom => "chp=0.628",:data => [@estadistica.usuario,@estadistica.cant1,@estadistica.comentarios,@estadistica.pagos,@estadistica.respuestas])
+    @bar = Gchart.pie_3d(:size => '700x400',
+    :title  => "Estadisticas Anuales",
+    :data => [@estadistica.usuario,@estadistica.cant1,@estadistica.comentarios,@estadistica.pagos,@estadistica.respuestas],
+    :labels => ["Usuarios", "Gauchadas", "Comentarios", "Pagos", "Respuestas"] )
   end
 end

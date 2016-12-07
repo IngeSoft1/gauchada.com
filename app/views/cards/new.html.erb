@@ -1,10 +1,11 @@
 <div class="Tarjeta de Credito">
   <div class="row formularios">
     <div class="col-lg-4 col-lg-offset-4 well">
-      <h3 class="text-center">Compra de puntos</h3>
 
+      <h3 class="text-center">Compra de puntos</h3>
+<h5> Se realizara la compra de un punto a un precio de $12 pesos argentinos</h5>
 <%= form_for (@card) do |f| %>
-<br></br>
+
 
 <div class="field">
   <%= f.label :numero %><br />
@@ -14,11 +15,6 @@
 <div class="field">
 <%= f.label :email_usuario %><br />
 <%= f.text_field :email_usuario, required: true %>
-</div>
-
-<div class="field">
-  <%= f.label :cv %><br />
-  <%= f.text_field :cv, required: true ,autofocus: true %>
 </div>
 
 <br></br>

@@ -44,15 +44,15 @@ puts "Creo la base de tarjetas de credito"
 Card.find_or_create_by(numero:"4242 4242 4242 4242", usuario_id:1,email_usuario:"admin@gmail.com", cv:123);
 Card.find_or_create_by(numero:"1111 2222 3333 4444", usuario_id:2,email_usuario:"sant@gmail.com", cv:123);
 puts "Creo la base de datos de estadisticas"
-Estadistica.find_or_create_by(usuario:6,fecha:1,comentarios:9,respuestas:2,pagos:5,cant1:4);
-Estadistica.find_or_create_by(usuario:23,fecha:2,comentarios:3,respuestas:1,pagos:5,cant1:3);
-Estadistica.find_or_create_by(usuario:34,fecha:3,comentarios:9,respuestas:6,pagos:6, cant1:3);
-Estadistica.find_or_create_by(usuario:67,fecha:4,comentarios:15,respuestas:14,pagos:12,cant1:1);
-Estadistica.find_or_create_by(usuario:78,fecha:5,comentarios:30,respuestas:20, pagos:10,cant1:4);
-Estadistica.find_or_create_by(usuario:89,fecha:6,comentarios:45,respuestas:35, pagos:19,cant1:10);
-Estadistica.find_or_create_by(usuario:45,fecha:7,comentarios:56,respuestas:46, pagos:23,cant1:17);
-Estadistica.find_or_create_by(usuario:23,fecha:8,comentarios:34,respuestas:14, pagos:23,cant1:2);
-Estadistica.find_or_create_by(usuario:89,fecha:9,comentarios:23,respuestas:8, pagos:10,cant1:2);
-Estadistica.find_or_create_by(usuario:56,fecha:10,comentarios:12,respuestas:5, pagos:7,cant1:23);
-Estadistica.find_or_create_by(usuario:20,fecha:11,comentarios:6,respuestas:4, pagos:9,cant1:6);
-Estadistica.find_or_create_by(usuario:10,fecha:12,comentarios:23,respuestas:34, pagos:2,cant1:11);
+Estadistica.find_or_create_by(usuario:0,fecha:1,comentarios:0,respuestas:0,pagos:0,cant1:0);
+Estadistica.find_or_create_by(usuario:0,fecha:2,comentarios:0,respuestas:0,pagos:0,cant1:0);
+Estadistica.find_or_create_by(usuario:0,fecha:3,comentarios:0,respuestas:0,pagos:0, cant1:0);
+Estadistica.find_or_create_by(usuario:0,fecha:4,comentarios:0,respuestas:0,pagos:0,cant1:0);
+Estadistica.find_or_create_by(usuario:0,fecha:5,comentarios:0,respuestas:0, pagos:0,cant1:0);
+Estadistica.find_or_create_by(usuario:0,fecha:6,comentarios:0,respuestas:0, pagos:0,cant1:0);
+Estadistica.find_or_create_by(usuario:0,fecha:7,comentarios:0,respuestas:0, pagos:0,cant1:0);
+Estadistica.find_or_create_by(usuario:0,fecha:8,comentarios:0,respuestas:0, pagos:0,cant1:0);
+Estadistica.find_or_create_by(usuario:0,fecha:9,comentarios:0,respuestas:0, pagos:0,cant1:0);
+Estadistica.find_or_create_by(usuario:0,fecha:10,comentarios:0,respuestas:0, pagos:0,cant1:0);
+Estadistica.find_or_create_by(usuario:10,fecha:11,comentarios:6,respuestas:4, pagos:9,cant1:6);
+Estadistica.find_or_create_by(usuario:14,fecha:12,comentarios:23,respuestas:14, pagos:2,cant1:10);

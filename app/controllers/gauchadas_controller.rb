@@ -4,6 +4,7 @@ class GauchadasController < ApplicationController
   end
 
   def index3
+  
   end
 
   def index2
