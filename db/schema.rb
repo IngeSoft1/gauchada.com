@@ -65,7 +65,6 @@ ActiveRecord::Schema.define(version: 20161206022355) do
     t.string   "ubicacion"
     t.string   "titulo"
     t.string   "imagen"
-    t.integer  "gauchada_id"
     t.integer  "postulacion_id"
     t.string   "estado"
   end
@@ -105,8 +104,6 @@ ActiveRecord::Schema.define(version: 20161206022355) do
     t.string   "estado"
   end
 
-<<<<<<< HEAD
-=======
   create_table "respuesta", force: :cascade do |t|
     t.integer  "respuesta_id"
     t.integer  "gauchada_id"
@@ -124,7 +121,6 @@ ActiveRecord::Schema.define(version: 20161206022355) do
     t.datetime "updated_at",    null: false
   end
 
->>>>>>> 969cf745a958d5ac689459443103c702c4c7dec0
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -142,7 +138,6 @@ ActiveRecord::Schema.define(version: 20161206022355) do
     t.datetime "date_of_birth"
     t.boolean  "admin",                  default: false
     t.string   "localidad"
-    t.integer  "gauchada_id"
     t.integer  "postulacion_id"
     t.integer  "puntos"
   end

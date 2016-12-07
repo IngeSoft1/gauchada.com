@@ -4,19 +4,23 @@
 
 <h1>Estadisticas Anual de Gauchadas.com</h1>
 
-<h4>En el siguiente gafico se mostraran los datos correspondientes a usuarios, pagos, comentarios y respeustas </h4>
-<%= image_tag @bar %><td>
-  <br></br>
-    <%= link_to "Enero", mostrarEstadisticas2_path(@estadisitica, :id => 36) ,class: 'btn btn-danger btn-sm'  %></td>
-  <%= link_to "Febrero", mostrarEstadisticas2_path(@estadisitica, :id => 37) ,class: 'btn btn-danger btn-sm'  %></td>
-  <%= link_to "Marzo", mostrarEstadisticas2_path(@estadisitica, :id => 38) ,class: 'btn btn-danger btn-sm'  %></td>
-  <%= link_to "Abril", mostrarEstadisticas2_path(@estadisitica, :id => 39) ,class: 'btn btn-danger btn-sm'  %></td>
-  <%= link_to "Mayo",mostrarEstadisticas2_path(@estadisitica, :id => 40) ,class: 'btn btn-danger btn-sm'  %></td>
-  <%= link_to "Junio", mostrarEstadisticas2_path(@estadisitica, :id => 41) ,class: 'btn btn-danger btn-sm'  %></td>
-  <%= link_to "Julio", mostrarEstadisticas2_path(@estadisitica, :id => 42) ,class: 'btn btn-danger btn-sm'  %></td>
-  <%= link_to "Agosto", mostrarEstadisticas2_path(@estadisitica, :id => 43) ,class: 'btn btn-danger btn-sm'  %></td>
-  <%= link_to "Septiembre", mostrarEstadisticas2_path(@estadisitica, :id => 44) ,class: 'btn btn-danger btn-sm'  %></td>
-  <%= link_to "Octubre", mostrarEstadisticas2_path(@estadisitica, :id => 45) ,class: 'btn btn-danger btn-sm'  %></td>
-  <%= link_to "Noviembre", mostrarEstadisticas2_path(@estadisitica, :id => 46) ,class: 'btn btn-danger btn-sm'  %></td>
-  <%= link_to "Diciembre", mostrarEstadisticas2_path(@estadisitica, :id => 47) ,class: 'btn btn-danger btn-sm'  %></td>
+<h4>En el siguiente grafico se mostraran las relaciones de los datos correspondientes a usuarios, pagos, comentarios, respuestas y Gauchadas anuales </h4>
+<%= image_tag @bar %>
+
+
+<br></br>
+
+  <%= link_to "Enero", mostrarEstadisticas2_path(@estadisitica, :fecha=> 1) ,class: 'btn btn-danger btn-sm'  %></td>
+  <%= link_to "Febrero", mostrarEstadisticas2_path(@estadisitica, :fecha => 2) ,class: 'btn btn-danger btn-sm'  %></td>
+  <%= link_to "Marzo", mostrarEstadisticas2_path(@estadisitica, :fecha => 3) ,class: 'btn btn-danger btn-sm'  %></td>
+  <%= link_to "Abril", mostrarEstadisticas2_path(@estadisitica, :fecha => 4) ,class: 'btn btn-danger btn-sm'  %></td>
+  <%= link_to "Mayo",  mostrarEstadisticas2_path(@estadisitica, :fecha => 5) ,class: 'btn btn-danger btn-sm'  %></td>
+  <%= link_to "Junio", mostrarEstadisticas2_path(@estadisitica, :fecha => 6) ,class: 'btn btn-danger btn-sm'  %></td>
+  <%= link_to "Julio", mostrarEstadisticas2_path(@estadisitica, :fecha => 7) ,class: 'btn btn-danger btn-sm'  %></td>
+  <%= link_to "Agosto", mostrarEstadisticas2_path(@estadisitica, :fecha => 8) ,class: 'btn btn-danger btn-sm'  %></td>
+  <%= link_to "Septiembre", mostrarEstadisticas2_path(@estadisitica, :fecha => 9) ,class: 'btn btn-danger btn-sm'  %></td>
+  <%= link_to "Octubre", mostrarEstadisticas2_path(@estadisitica, :fecha => 10) ,class: 'btn btn-danger btn-sm'  %></td>
+  <%= link_to "Noviembre", mostrarEstadisticas2_path(@estadisitica, :fecha => 11) ,class: 'btn btn-danger btn-sm'  %></td>
+  <%= link_to "Diciembre", mostrarEstadisticas2_path(@estadisitica, :fecha => 12) ,class: 'btn btn-danger btn-sm'  %></td>
+
 <br></br>

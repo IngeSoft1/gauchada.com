@@ -33,10 +33,6 @@ class CardsController < ApplicationController
             ema = true
             id_email = tarjeta.id
           end
-          if (cv == tarjeta.cv) then
-            cv_veri = true
-            id_cv = tarjeta.id
-          end
           if (numero == tarjeta.numero) then
             num = true
             id_num = tarjeta.id
@@ -50,10 +46,18 @@ if (id_email == id_num)  then
                 usua = User.find(usuario)
                 usua.puntos = usua.puntos + 1
                 usua.save
-                num = false
-                ema = false
+                num = true
+                ema = true
                 listo = true
                 redirect_to root_path
+end
+
+if (ema == false)
+  if(num == false)
+      redirect_to :back
+      flash[:alert]= 'Los campos ingresado son incorrectos'
+      listo = true
+end
 end
 
 if (ema == false)
@@ -63,19 +67,12 @@ if (ema == false)
       listo = true
 end
 end
+
 if (num == false)
   if (listo ==false)
   redirect_to realizaPago_path
   flash[:alert]= 'El numero ingersado es incorrecto'
   listo = true
-end
-end
-if (ema == false)
-  if(num == false)
-    if (listo = false)
-      redirect_to :back
-      flash[:alert]= 'Los campos ingresado son incorrectos'
-end
 end
 end
 
@@ -87,4 +84,5 @@ end
   def card_params
     params.require(:card).permit(:numero, :email_usuario,:usuario_id)
   end
+end
 end

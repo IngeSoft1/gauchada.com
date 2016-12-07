@@ -30,6 +30,7 @@
                   <li>
                 </div>
           <%end%>
+          
       <% if user_signed_in? %>
           <li class="logeado" > Logeado como <strong><%= current_user.name %></strong> tienes: <strong><%= current_user.puntos%> puntos</strong></p></li>
           <li ><%= link_to 'Sobre Nosotros', listadoMonstruos_path %></li>

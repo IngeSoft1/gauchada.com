@@ -19,7 +19,7 @@
       <br>
       <div class="field">
       <%= f.label :descripcion %><br>
-      <%= f.text_field :descripcion, required: true %>
+      <%=text_area(:gauchada, :descripcion, size: "40x3",placeholder: 'Ingrese su descripcion', required: true)%>
       </div>
       <br>
       <div class="field">
