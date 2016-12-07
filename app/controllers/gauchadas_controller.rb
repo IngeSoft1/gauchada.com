@@ -21,7 +21,9 @@ class GauchadasController < ApplicationController
   end
 
   def new
+
    @gauchada = Gauchada.new
+ 
   end
 
   def republicar

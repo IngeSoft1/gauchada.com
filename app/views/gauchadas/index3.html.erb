@@ -2,7 +2,7 @@
               <hgroup class="mb20">
             		<h1>Gauchadas</h1>
               <% Gauchada.all.each do |gau| %>
-                <% if current_user.id = gau.user_id %>
+                <% if current_user.id == gau.user_id %>
                   <section class="col-xs-12 col-sm-6 col-md-12">
                   		<article class="search-result row">
                   			<div class="col-xs-12 col-sm-12 col-md-3">
@@ -10,7 +10,6 @@
                   			</div>
                   			<div class="col-xs-12 col-sm-12 col-md-2">
                   				<ul class="meta-search">
-
                   					<li><i class="glyphicon glyphicon-time "></i> <span><%= gau.created_at %></span></li>
                   					<li><i class="glyphicon glyphicon-map-marker "></i> <span><%= gau.ubicacion %></span></li>
                   				</ul>
@@ -20,8 +19,9 @@
                   				<p><%= gau.descripcion %></p>
                   			</div>
                         <div class="col-xs-12 col-sm-12 col-md-7 excerpet"><%= link_to "Ver mas", detallesGauchada_path(@gauchada, :id => gau.id), class: 'btn btn-info btn-sm vermas' %></div>
-
+                        <br><br>
                   			<span class="clearfix borda"></span>
+
                   		</article>
 
                 </section>
