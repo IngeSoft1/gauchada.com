@@ -4,7 +4,7 @@ class GauchadasController < ApplicationController
   end
 
   def index3
-  
+
   end
 
   def index2
@@ -15,6 +15,9 @@ class GauchadasController < ApplicationController
     @gauchada = Gauchada.find(params[:id])
     @comentarios = Comentario.new
     @answer = Answer.new
+  end
+  def show2
+    @user = User.find(params[:id])
   end
 
   def new

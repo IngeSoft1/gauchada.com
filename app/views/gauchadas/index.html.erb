@@ -3,7 +3,7 @@
             		<h1>Gauchadas</h1>
             		<h2 class="lead"><strong class="text-danger"><strong>Cantidad de gauchadas para visualizar  </strong><%=@gauchada.count%></strong></h2>
       	      </hgroup>
-              <% Gauchada.all.each do |gau| %>
+              <% @gauchada.all.each do |gau| %>
                   <section class="col-xs-12 col-sm-6 col-md-12">
                   		<article class="search-result row">
                   			<div class="col-xs-12 col-sm-12 col-md-3">
