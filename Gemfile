@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
+
+gem 'googlecharts'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -48,6 +50,5 @@ group :development do
   gem 'devise'
   gem 'stripe'
   gem 'jquery-rails'
-  gem 'googlecharts'
 
 end

@@ -9,7 +9,7 @@ class PostulacionsController < ApplicationController
   def new
     @postulacion = Postulacion.new
     @gauchada = Gauchada.find(params[:id])
-    
+
   end
 
   def create
@@ -45,7 +45,7 @@ class PostulacionsController < ApplicationController
   end
 
   def postulante_params
-      params.require(:postulacion).permit(:descripcion, :localidad, :gauchada_id)
+      params.require(:postulacion).permit(:descripcion, :localidad, :gauchada_id, :fecha)
   end
 
   def update

@@ -7,8 +7,8 @@
 <%= f.label :localidad %>
 <%= f.text_field :localidad ,required: true %>
 <br></br>
-<%= f.label :fecha_de_finalizacio_de_gauchada %>
-<%= f.date_select :localidad%>
+<%= f.label :fecha_de_finalizacio_de_gauchada%>
+<%= f.date_select :fecha, { :start_year => Date.today.year, :end_year => 2030, :star_day => Date.today.day, :star_month => Date.today.month }, required: true%>
 <br></br>
 <%= f.submit 'Guardar', :class => "btn btn-primary dropdown-toggle vermas"%>
 <% end %>

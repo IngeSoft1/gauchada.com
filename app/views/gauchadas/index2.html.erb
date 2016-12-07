@@ -5,6 +5,7 @@
         <th> Descripcion</th>
         <th> Localidad </th>
         <th> Gauchada </th>
+        <th> Plazo </th>
         <th> Estado </th>
         <th> Acciones </th>
       </tr>
@@ -15,14 +16,18 @@
       <td> <%= postu.descripcion %> </td>
       <td> <%= postu.localidad %> </td>
       <td> <%= Gauchada.find(postu.gauchada_id).titulo%></td>
+      <td> <%= postu.fecha%> </td>
+
       <td> <%= postu.estado%> </td>
           <td>
           <%if(postu.estado != "Aceptado") && (postu.estado != "Rechazado") && (postu.estado != "Cumplido") && (postu.estado != "No cumplio")%>
             <%= link_to "Aceptar", aceptarPostulacion_path(@postulacion, :id => postu.id), class: 'btn btn-danger btn-sm' %>
           <% end %>
           <%if(postu.estado == "Aceptado")%>
-            <%= link_to "Cumplio", cumplimientoPostulacion_path(@postulacion, :id => postu.id), class: 'btn btn-danger btn-sm' %>
-            <%= link_to "No cumplio", inCumplimientoPostulacion_path(@postulacion, :id => postu.id), class: 'btn btn-danger btn-sm' %>
+            <%if(postu.fecha <= Date.today)%>
+              <%= link_to "Cumplio", cumplimientoPostulacion_path(@postulacion, :id => postu.id), class: 'btn btn-danger btn-sm' %>
+              <%= link_to "No cumplio", inCumplimientoPostulacion_path(@postulacion, :id => postu.id), class: 'btn btn-danger btn-sm' %>
+            <% end %>
           <% end %>
         </td>
           <td>
