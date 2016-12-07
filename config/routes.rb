@@ -77,6 +77,8 @@ resources :answers
   get 'gauchada/index'
   get '/detallesGauchada', to:'gauchadas#show'
 
+  get 'informacionContacto', to:'gauchadas#show2'
+
    get '/nuevaGauchada', to:'gauchadas#new'
 
    get '/eliminarGauchada', to:'gauchadas#destroy'
