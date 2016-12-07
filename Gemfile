@@ -48,5 +48,6 @@ group :development do
   gem 'devise'
   gem 'stripe'
   gem 'jquery-rails'
+  gem 'googlecharts'
 
 end

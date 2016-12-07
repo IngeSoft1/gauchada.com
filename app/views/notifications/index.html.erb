@@ -1,0 +1,19 @@
+<div class="tabla-logro ">
+<h1>Mis Notificaciones</h1>
+  <table class= "table2 table table-hover">
+    <thead>
+      <tr>
+        <th> Descripcion</th>
+        <th> Fecha</th>
+        <th> Acciones</th>
+      </tr>
+    </thead>
+    <%  Notification.all.each do |noti| %>
+    <tr>
+    <% if current_user.id == noti.usuario_id %>
+      <td> <%= noti.texto %> </td>
+      <td> <%= time_ago_in_words noti.created_at %> </td>
+      <td><%= link_to "Eliminar", eliminarNotificacion_path(@notifications, :id => noti.id ) ,class: 'btn btn-danger btn-sm' ,:data => { :confirm => 'Esta seguro que desea eliminar?' } %></td>
+    <%end%>
+    </tr>
+    <%end%>

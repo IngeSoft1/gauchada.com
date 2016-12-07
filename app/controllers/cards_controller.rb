@@ -7,7 +7,7 @@ class CardsController < ApplicationController
 
   def new
     @card = Card.new
-  end
+
 
   def destroy
   end
@@ -29,15 +29,15 @@ class CardsController < ApplicationController
     if @card.save
       @card.destroy
       Card.all.each do |tarjeta|
-          if (email == tarjeta.email_usuario)
+          if (email == tarjeta.email_usuario) then
             ema = true
             id_email = tarjeta.id
           end
-          if (cv == tarjeta.cv)
+          if (cv == tarjeta.cv) then
             cv_veri = true
             id_cv = tarjeta.id
           end
-          if (numero == tarjeta.numero)
+          if (numero == tarjeta.numero) then
             num = true
             id_num = tarjeta.id
           end
@@ -45,7 +45,7 @@ class CardsController < ApplicationController
     end
 
 listo = false
-if (id_email == id_num) && (id_cv == id_email)
+if (id_email == id_num)  then
                 flash[:notice] = 'Se realizo la compra de puntos satifactoriamente'
                 usua = User.find(usuario)
                 usua.puntos = usua.puntos + 1
@@ -56,26 +56,27 @@ if (id_email == id_num) && (id_cv == id_email)
                 redirect_to root_path
 end
 
-if (ema) && (listo ==false)
+if (ema == false)
+  if (listo ==false)
       redirect_to realizaPago_path
-      flash[:alert] = 'El numero de tarjeta es incorrecto'
+      flash[:alert] = 'El Email de tarjeta es incorrecto'
       listo = true
 end
-if num && (listo ==false)
+end
+if (num == false)
+  if (listo ==false)
   redirect_to realizaPago_path
-  flash[:alert]= 'El Email ingersado es incorrecto'
+  flash[:alert]= 'El numero ingersado es incorrecto'
   listo = true
 end
-if cv_veri && (listo ==false)
-  redirect_to realizaPago_path
-  flash[:alert]= 'El CV ingersado es incorrecto'
-  listo = true
 end
-if (ema == false) && (num == false)
-  if(cv_veri == false)
+if (ema == false)
+  if(num == false)
+    if (listo = false)
       redirect_to :back
       flash[:alert]= 'Los campos ingresado son incorrectos'
-    end
+end
+end
 end
 
 

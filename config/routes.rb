@@ -1,4 +1,25 @@
 Rails.application.routes.draw do
+resources :estadisticas
+  get 'mostrarListaEstadisticas', to:'estadisticas#index1'
+
+  get 'estadisticas/index2'
+
+  get 'mostrarEstadisticas', to:'estadisticas#show'
+  get 'mostrarEstadisticas2', to:'estadisticas#show2'
+
+resources :notifications
+  get 'mostrarNotificaciones' , to:'notifications#index'
+
+  get 'notifications/create'
+
+  get 'notifications/index'
+
+  get 'nuevaNotificacion' , to:'notifications#new'
+
+  get 'notifications/update'
+
+  get 'eliminarNotificacion',to:'notifications#destroy'
+
 #rutas de tarjeta de credio
 resources :cards
   get 'cards/index'

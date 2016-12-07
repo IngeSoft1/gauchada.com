@@ -9,6 +9,7 @@ class PostulacionsController < ApplicationController
   def new
     @postulacion = Postulacion.new
     @gauchada = Gauchada.find(params[:id])
+    
   end
 
   def create
