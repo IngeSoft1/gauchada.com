@@ -4,7 +4,6 @@
   <table class= "table2 table table-hover">
     <thead>
       <tr>
-          <th> Usuario </th>
         <th> Descripcion</th>
         <th> Localidad </th>
         <th> Gauchada </th>
@@ -16,7 +15,6 @@
 <tbody>
   <% current_user.postulacions.all.each do |postu| %>
     <tr>
-      <td> <%= User.find(postu.user_id).name %> </td>
       <td> <%= postu.descripcion %> </td>
       <td> <%= postu.localidad %> </td>
       <td> <%= Gauchada.find(postu.gauchada_id).titulo%> </td>

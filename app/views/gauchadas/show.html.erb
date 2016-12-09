@@ -111,16 +111,25 @@
                           <p><%=ans.res%></p>
                   <%end%>
                   <%end%>
+                  <%cant = 0%>
                   <% if user_signed_in?%>
                     <%if current_user.id == @gauchada.user_id%>
-                      <%= form_for (@answer) do |f| %>
+                    <% Answer.all.each do |ans| %>
+                      <% if (ans.comentario_id == com.id) %>
+                                <%cant = 1%>
+                      <%end%>
+                    <%end%>
+                      <% if cant == 0 %>
+                          <%= form_for (@answer) do |f| %>
+                          <%=text_area(:answer, :res, size: "60x2",placeholder: 'Ingrese su respuesta',required: true)%>
+                          <%= f.hidden_field :comentario_id, :value => com.id %>
+                          <%= f.submit 'Responder',class: ' res btn btn-danger btn-sm' %>
+                          <% end %>
+                        <% else %>
+                          <%cant = 0 %>
+                        <% end %>
 
-                      <%=text_area(:answer, :res, size: "60x2",placeholder: 'Ingrese su respuesta',required: true)%>
-
-                      <%= f.hidden_field :comentario_id, :value => com.id %>
-                      <%= f.submit 'Responder',class: ' res btn btn-danger btn-sm' %>
-                      <% end %>
-                    <% end %>
+                    <%end%>
                   <%end%>
                   <br>
                 </div>
