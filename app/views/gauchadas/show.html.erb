@@ -95,9 +95,8 @@
             <h4><b><%= use.name%></b>  <small> <%=com.created_at%> </small></h4>
             <p><%= com.coment %></p>
             <% if user_signed_in?%>
-              <%if (current_user.id == @gauchada.user_id) || (current_user.id = 1)%>
-
-            <%= link_to "Eliminar", eliminarComentario_path(@comentarios, :id => com.id), class: 'btn btn-danger btn-sm',:data => { :confirm => 'Esta seguro que desea eliminar?'} %></td>
+              <%if (current_user.id == @gauchada.user_id) || (current_user.id == 1)%>
+                  <%= link_to "Eliminar", eliminarComentario_path(@comentarios, :id => com.id), class: 'btn btn-danger btn-sm',:data => { :confirm => 'Esta seguro que desea eliminar?'} %></td>
             <br></br>
             <%end%>
             <%end%>
