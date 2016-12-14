@@ -23,6 +23,9 @@
           <td>
           <%= link_to "Eliminar", eliminarPostulacion_path(@postulacion, :id => postu.id), class: 'btn btn-danger btn-sm' ,:data => { :confirm => 'Esta seguro que desea eliminar?' } %></td>
           <td>
+            <% if postu.estado == "Aceptado" %>
+              <%= link_to "Informacion de contacto", informacionContacto_path(postu.gauchada_id, :id => Gauchada.find(postu.gauchada_id).user_id), class: 'btn btn-info btn-sm' %>
+            <% end %>
 
     </tr>
 <% end %>
