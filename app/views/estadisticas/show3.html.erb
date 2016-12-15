@@ -2,10 +2,10 @@
 <br></br>
 <br></br>
 
-<h1>Estadisticas Anual de Gauchadas.com</h1>
+<h1>Estadisticas del Mes</h1>
 
-<h4>En el siguiente grafico se mostraran las relaciones de los datos correspondientes a usuarios, pagos, comentarios, respuestas y Gauchadas anuales </h4>
 <%= image_tag @bar %>
+<br></br>
 <h2>Informacion del gráfico</h2>
 
 <h4>  Usuarios: <%= @estadistica.usuario%></br>
@@ -15,10 +15,8 @@
   Ganancias totales($)<%= @estadistica.pagos%></br>
 </h4>
 <br></br>
-
 <h4>Al utilizar la busqueda por fechas, se completa los campos con el formato <b>dd/mm/aa</b> tanto en fecha inicial como final,
   caso contario no funcionara correctamente</h4>
-<br></br>
 <%= form_tag(mostrarEstadisticas3_path, class:"navbar-form navbar-right search-form ", :method => "get") do %>
 
         <%=text_field_tag :dia_inicio,nil,class:'search',placeholder: "Dia incio" %>
@@ -35,3 +33,6 @@
         <li> <%= submit_tag 'Busqueda',class:'btn-group-vertical filtrobuton' %></li>
 
 <%end%>
+
+
+<br></br>

@@ -6,7 +6,7 @@ resources :estadisticas
 
   get 'mostrarEstadisticas', to:'estadisticas#show'
   get 'mostrarEstadisticas2', to:'estadisticas#show2'
-
+  get 'mostrarEstadisticas3', to:'estadisticas#show3'	
 resources :notifications
   get 'mostrarNotificaciones' , to:'notifications#index'
 
